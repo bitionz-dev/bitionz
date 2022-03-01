@@ -1,0 +1,35 @@
+.input {
+    border-radius: 6px;
+}
+
+.input :global(fieldset) {
+    border-radius: 6px;
+    border-color: var(--color-dark-grey) !important;
+}
+
+.input :global(fieldset:hover) {
+    border-color: white !important;
+}
+
+.input :global(div:hover) {
+    border-color: white !important;
+    color: white !important;
+}
+
+.input :global(#input-search-upperBar-label) {
+    color: var(--color-dark-grey) !important;;
+}
+
+.input :global(input) {
+    color: var(--color-dark-grey) !important;;
+}
+
+.input :global(label) {
+    color: var(--color-dark-grey) !important;;
+}
+
+.icon {
+    color: var(--color-dark-grey) !important;;
+}
+
+

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.MuiPaper-root {
+    background-color: var(--color-dark-violet) !important;
+    color: white !important;
+}
+
+.MuiSvgIcon-root {
+    color: white;
+}
+
+
+:root {
+    --color-dark-violet: #0C0F23;
+    --color-dark-grey: #9F9F9F;
+    --color-dark-purple: #334AD6;
+    --color-light-black: #16192C;
+    --color-light-grey: #9F9F9F;
+}
