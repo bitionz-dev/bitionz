@@ -19,7 +19,7 @@ export default function SearchBar({className}) {
         popupIcon={<SearchIcon className={styles.icon}/>}
         getOptionLabel={(option) => option.name}
         onChange={(e) => console.log(e.target)}
-        sx={{width: 650}}
+        sx={{width: 700}}
         renderInput={(params) => <TextField {...params} label="Buscá tu metaverso..."/>}
         filterOptions={filterOptions}
         options={tokens}/>
