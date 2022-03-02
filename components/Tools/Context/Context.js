@@ -1,9 +1,19 @@
 import React from 'react';
 
 export const LayoutContext = React.createContext({
-    showLowerNavBar: false,
+    showLowerSearchSection: false,
     showDrawerMenu: false,
+    showFilters: false,
+    setShowFilters: () => {},
     setShowDrawerMenu: () => {},
-    setShowLowerNavBar: () => {},
+    setShowLowerSearchSection: () => {},
+    filters: {
+        blockchains: [],
+        setBlockchains: () => {},
+        types: [],
+        setTypes: () => {},
+        nft: false,
+        setNft: () => {},
+    },
     tokens: []
 });

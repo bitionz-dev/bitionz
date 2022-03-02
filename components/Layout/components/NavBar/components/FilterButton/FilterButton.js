@@ -5,8 +5,8 @@ import {useContext} from "react";
 import {LayoutContext} from "../../../../../Tools/Context/Context"
 
 export default function FilterButton({className}) {
-    const {showDesktopLowerBar, setShowDesktopLowerBar} = useContext(LayoutContext);
+    const {showFilters, setShowFilters} = useContext(LayoutContext);
     return <Button variant="outlined" className={`${styles.filterButton} ${className}`}
-                   onClick={() => setShowDesktopLowerBar(!showDesktopLowerBar)}
+                   onClick={() => setShowFilters(!showFilters)}
                    startIcon={<FilterAltIcon/>}>Filtros</Button>
 }

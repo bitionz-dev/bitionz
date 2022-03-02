@@ -1,0 +1,33 @@
+.lowerBar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 11px 62px;
+    border-top: 1px solid var(--color-light-grey);
+}
+
+.filters :global(.MuiSelect-select) {
+    color: var(--color-light-grey);
+}
+
+.lowerBar :global(label) {
+    color: var(--color-light-grey);
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .filters {
+        flex-direction: column;
+        background-color: var(--color-light-violet);
+        padding-top: 1.5em;
+    }
+
+    .lowerBar {
+        justify-content: center;
+        background-color: var(--color-light-violet);
+    }
+
+}

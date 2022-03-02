@@ -1,0 +1,19 @@
+.filterContainer {
+    color: white;
+}
+
+.filterLabel {
+    color: white;
+}
+
+.filterContainer :global(fieldset) {
+    border-color: var(--color-dark-grey) !important;
+}
+
+.filterContainer :global(svg) {
+    color: var(--color-dark-grey) !important;
+}
+
+.filterContainer :global(span) {
+    color: var(--color-dark-grey) !important;
+}

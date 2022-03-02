@@ -19,6 +19,7 @@ a {
 
 * {
     box-sizing: border-box;
+
 }
 
 .MuiPaper-root {
@@ -30,6 +31,9 @@ a {
     color: white;
 }
 
+label, p {
+    font-size: 0.9em !important;
+}
 
 :root {
     --color-dark-violet: #0C0F23;
@@ -37,4 +41,5 @@ a {
     --color-dark-purple: #334AD6;
     --color-light-black: #16192C;
     --color-light-grey: #9F9F9F;
+    --color-light-violet: #14172E;
 }

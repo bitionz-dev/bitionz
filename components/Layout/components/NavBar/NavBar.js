@@ -1,4 +1,4 @@
-import SearchBar from "./components/SearchBar/SearchBar";
+import SearchBar from "../Shared/SearchBar/SearchBar";
 import FilterButton from "./components/FilterButton/FilterButton";
 import PromoteButton from "./components/PromoteButton/PromoteButton";
 import Logo from "./components/Logo/Logo"
@@ -10,9 +10,9 @@ export default function NavBar() {
     const isTabletOrMobile = useMediaQuery({maxWidth: 1224})
     return (
         <nav
-            className={'tw-container tw-bg-violet-900 sm:tw-px-5 tw-py-5 tw-grid tw-grid-cols-2 lg:tw-grid-cols-10 tw-gap-2 lg:tw-gap-4 tw-content-center'}>
+            className={'tw-container tw-bg-violet-900 sm:tw-px-5 tw-py-5 tw-grid tw-grid-cols-2 lg:tw-grid-cols-10 tw-gap-2 lg:tw-gap-4 tw-content-center tw-items-center'}>
             <Logo/>
-            {isDesktopOrLaptop && <SearchBar className={'tw-col-start-3 tw-col-end-8'}/>}
+            {isDesktopOrLaptop && <SearchBar className={'tw-col-start-3 tw-col-end-8'} width={700}/>}
             {isDesktopOrLaptop && <FilterButton className={'tw-col-start-8 tw-col-end-9'}/>}
             {isDesktopOrLaptop && <PromoteButton className={'tw-col-start-9 tw-col-end-11'}/>}
             {isTabletOrMobile && <Icons/>}

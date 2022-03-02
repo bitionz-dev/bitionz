@@ -1,16 +1,17 @@
 import * as React from 'react';
 import Search from "./components/Search"
 import Menu from "./components/Menu"
+import FilterIcon from "../../../Shared/FilterIcon/FilterIcon";
 import styles from "./Icons.module.css"
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import {useContext} from "react";
 import {LayoutContext} from "../../../../../Tools/Context/Context";
 
+
 export default function Icons() {
-    const {showLowerNavBar, setShowLowerNavBar} = useContext(LayoutContext);
+    const {showLowerSearchSection} = useContext(LayoutContext)
     return (<div className={styles.iconsGrid}>
-        <Search/>
-        <FilterAltIcon className={styles.filterButton} onClick={() => setShowLowerNavBar(!showLowerNavBar)}/>
+        {!showLowerSearchSection && <Search/>}
+        <FilterIcon/>
         <Menu/>
     </div>);
 }
