@@ -1,0 +1,31 @@
+.popularsContainer {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+}
+
+.populars {
+    padding: 2% 10%;
+}
+
+.title {
+    font-size: 2em;
+    color: white;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .title {
+        margin-top: 12%;
+        margin-bottom: 12%;
+        font-size: 1.5em;
+    }
+
+    .popularsContainer {
+        flex-flow: column;
+    }
+
+}

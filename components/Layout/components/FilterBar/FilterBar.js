@@ -7,7 +7,7 @@ import ApplyButton from "./components/ApplyButton/ApplyButton";
 
 export default function FilterBar() {
 
-    return (<div className={styles.lowerBar}>
+    return (<div className={`tw-py-5 tw-container ${styles.lowerBar}`}>
         <div className={styles.filters}>
             <BlockchainFilter/>
             <NFTFilter/>

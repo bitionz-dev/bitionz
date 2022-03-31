@@ -31,6 +31,15 @@ a {
     color: white;
 }
 
+.card:hover .card-img-overlay {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.card:hover .card-img {
+    opacity: 0.3;
+}
+
 label, p {
     font-size: 0.9em !important;
 }

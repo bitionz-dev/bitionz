@@ -15,5 +15,7 @@ export const LayoutContext = React.createContext({
         nft: false,
         setNft: () => {},
     },
-    tokens: []
+    tokens: [],
+    setFilteredTokens: () => {},
+    filteredTokens: []
 });

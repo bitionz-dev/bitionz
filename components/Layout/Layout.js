@@ -1,6 +1,6 @@
 import NavBar from "./components/NavBar/NavBar";
 import {LayoutContext} from "../Tools/Context/Context"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useMediaQuery} from "react-responsive";
 import LowerSearchSection from "./components/LowerSearchSection/LowerSearchSection";
 import FilterBar from "./components/FilterBar/FilterBar";
@@ -12,6 +12,10 @@ export default function Layout({children, tokens}) {
     const [blockchainsFilter, setBlockchainsFilter] = useState([]);
     const [typesFilter, setTypesFilter] = useState([]);
     const [nftFilter, setNftFilter] = useState(false);
+    const [filteredTokens, setFilteredTokens] = useState(tokens);
+    useEffect(() => {
+        setFilteredTokens(tokens)
+    }, [tokens])
     return (
         <LayoutContext.Provider value={{
             setShowLowerSearchSection: setShowLowerSearchSection,
@@ -26,7 +30,9 @@ export default function Layout({children, tokens}) {
                 nft: nftFilter,
                 setNft: setNftFilter
             },
-            tokens: tokens
+            tokens: tokens,
+            setFilteredTokens: setFilteredTokens,
+            filteredTokens: filteredTokens
         }}>
             <NavBar/>
             {showFilters && <FilterBar/>}

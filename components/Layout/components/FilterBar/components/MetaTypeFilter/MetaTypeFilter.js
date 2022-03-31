@@ -7,6 +7,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
 import styles from "./MetaTypeFilter.module.css"
+import {useContext} from "react";
+import {LayoutContext} from "../../../../../Tools/Context/Context";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -19,20 +21,54 @@ const MenuProps = {
     },
 };
 
-const names = [
-    'Gratis',
-    'Pago',
+const supportedTypes = [
+    {
+        name: "Gaming",
+        value: "gaming",
+    },
+    {
+        name: "Play to Earn",
+        value: "play-to-earn",
+    },
+    {
+        name: "Realidad aumentada",
+        value: "vr-ar",
+    },
+    {
+        name: "Empresarial",
+        value: "enterprise-solutions",
+    },
+    {
+        name: "Media",
+        value: "media",
+    },
+    {
+        name: "Entretenimiento",
+        value: "entertainment",
+    },
+    {
+        name: "DAO",
+        value: "dao",
+    },
+    {
+        name: "Pagos",
+        value: "payments",
+    },
+    {
+        name: "Yield",
+        value: "yield-farming",
+    },
+
 ];
 
 export default function MetaTypeFilter() {
-    const [typesOfMeta, setTypesOfMeta] = React.useState([]);
+    const {filters: {setTypes, types}} = useContext(LayoutContext)
 
     const handleChange = (event) => {
         const {
             target: {value},
         } = event;
-        setTypesOfMeta(
-            // On autofill we get a the stringified value.
+        setTypes(
             typeof value === 'string' ? value.split(',') : value,
         );
     };
@@ -45,17 +81,17 @@ export default function MetaTypeFilter() {
                     labelId="demo-multiple-checkbox-label"
                     id="demo-multiple-checkbox"
                     multiple
-                    value={typesOfMeta}
+                    value={types}
                     onChange={handleChange}
                     input={<OutlinedInput label="Tipos de meta"/>}
                     renderValue={(selected) => selected.join(', ')}
                     MenuProps={MenuProps}
                     className={styles.filterContainer}
                 >
-                    {names.map((name) => (
-                        <MenuItem key={name} value={name}>
-                            <Checkbox checked={typesOfMeta.indexOf(name) > -1}/>
-                            <ListItemText primary={name}/>
+                    {supportedTypes.map((type) => (
+                        <MenuItem key={type.name} value={type.value}>
+                            <Checkbox checked={types.indexOf(type.value) > -1}/>
+                            <ListItemText primary={type.name}/>
                         </MenuItem>
                     ))}
                 </Select>

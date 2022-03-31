@@ -1,0 +1,33 @@
+.bannerContainer {
+    min-height: 283px;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+    padding-top: 20px;
+    width: 90%;
+}
+
+.bannerImage {
+    width: 90% !important;
+    height: 90%;
+}
+
+.bannerImageMobile {
+    display: none !important;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .bannerImage {
+        display: none !important;
+    }
+
+    .bannerImageMobile {
+        display: block !important;
+        width: 90% !important;
+    }
+
+    .bannerContainer {
+        width: 100%;
+        max-width: 500px;
+    }
+}

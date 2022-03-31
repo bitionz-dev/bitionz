@@ -12,7 +12,7 @@ const filterOptions = createFilterOptions({
 
 export default function SearchBar({className, width}) {
     const router = useRouter()
-    const {tokens} = useContext(LayoutContext);
+    const {filteredTokens} = useContext(LayoutContext);
     return <Autocomplete
         id="input-search"
         size={"small"}
@@ -32,5 +32,5 @@ export default function SearchBar({className, width}) {
         sx={{width: width}}
         renderInput={(params) => <TextField {...params} label="Buscá tu metaverso..."/>}
         filterOptions={filterOptions}
-        options={tokens}/>
+        options={filteredTokens}/>
 }

@@ -1,0 +1,36 @@
+.cardBody {
+    width: 100%;
+    background-color: #16192C;
+}
+
+.cardLatest {
+    max-width: 317px;
+    max-height: fit-content;
+    align-items: center;
+    color: white;
+    background-color: transparent;
+    border: none;
+    box-shadow: #371c91 1px 1px 3px 1px;
+    width: 21.5%;
+    margin-bottom: 40px;
+
+}
+
+.cardLatest:hover {
+    cursor: pointer;
+}
+
+.cardLatest :global(.card-img-top) {
+    height: 28%;
+    width: 21%;
+    margin-top: 10%;
+    margin-bottom: 8%;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .cardLatest {
+        max-width: 500px;
+        width: 100%;
+    }
+
+}
