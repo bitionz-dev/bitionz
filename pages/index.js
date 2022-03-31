@@ -30,16 +30,16 @@ export default function Home({tokens, setTokens}) {
                 crossOrigin="anonymous"
             />
             <link rel="icon" href="/favicon.ico"/>
-            <Script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin></Script>
-
-            <Script
-                src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-                crossOrigin></Script>
-
-            <Script
-                src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-                crossOrigin></Script>
         </Head>
+        <Script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin></Script>
+
+        <Script
+            src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
+            crossOrigin></Script>
+
+        <Script
+            src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
+            crossOrigin></Script>
         <main className={styles.main}>
             <Banner/>
             <Suggestions/>
