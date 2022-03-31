@@ -41,9 +41,10 @@ export default function Populars() {
     const {data, error} = useSWR(`/api/detail?id=${popularTokens.toString()}`, fetcher)
     if (error) return <div>Failed to load</div>
     if (!data) return <div>Loading...</div>
-    if (!data.data) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
-    const detailData = Object.values(data.data)
-
+    if (data.length < 1) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
+    console.log(data)
+    const detailData = Object.values(data)
+    console.log(detailData)
     return (
         <div className={styles.populars}>
             <h2 className={styles.title}>Populares</h2>

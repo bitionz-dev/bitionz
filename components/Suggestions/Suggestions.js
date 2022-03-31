@@ -10,6 +10,8 @@ import FullCard from "../Shared/FullCard/FullCard";
 import useSWR from 'swr'
 import {useMediaQuery} from "react-responsive";
 
+
+
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Suggestions() {
@@ -22,6 +24,7 @@ export default function Suggestions() {
     if (error) return <div>Failed to load</div>
     if (!data) return <div>Loading...</div>
     if (data.length === 0) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
+
     data.sort((a, b) => {
         if (a.id < b.id) {
             return -1

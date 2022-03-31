@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import Cors from 'cors';
+import translate from "node-google-translate-skidz";
 
 // Initializing the cors middleware
 const cors = Cors({
@@ -32,9 +33,25 @@ export default async (req, res) => {
             method: 'GET', headers: myHeaders, redirect: 'follow'
         };
 
-        fetch(`${process.env.SU}/v2/cryptocurrency/info?id=${req.query.id}`, requestOptions).then(response => response.text())
-            .then(result => res.status(200).json(result))
+        const {data} = await fetch(`${process.env.SU}/v2/cryptocurrency/info?id=${req.query.id}`, requestOptions).then(response => response.json())
+        const detailData = Object.values(data)
+        let translatedData = []
+        for (const token of detailData) {
+            const {translation} = await translateString(token.description)
+            token.description = translation
+            translatedData.push(token)
+        }
+        return res.status(200).json(translatedData)
     } catch (err) {
         return err
     }
+}
+
+
+const translateString = async (string) => {
+    return await translate({
+        text: string, source: 'en', target: 'es'
+    }, function (result) {
+        return result.translation.translation
+    })
 }
