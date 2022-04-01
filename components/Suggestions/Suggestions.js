@@ -3,6 +3,7 @@ import {useContext} from "react";
 import {LayoutContext} from "../Tools/Context/Context";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import CircularProgress from '@mui/material/CircularProgress';
 import {ButtonBack, ButtonNext, CarouselProvider, Slide, Slider} from "pure-react-carousel";
 import styles from "./Suggestions.module.css"
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -22,7 +23,7 @@ export default function Suggestions() {
     suggestedTokens.forEach((token) => requiredTokens.push(token.id))
     const {data, error} = useSWR(`/api/suggested`, fetcher)
     if (error) return <div>Failed to load</div>
-    if (!data) return <div>Loading...</div>
+    if (!data) return <CircularProgress className={styles.circular}/>
     if (data.length === 0) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
 
     data.sort((a, b) => {

@@ -17,6 +17,10 @@
     margin-bottom: 2%;
 }
 
+.circular {
+    margin-top: 50px;
+}
+
 @media only screen and (max-device-width: 1024px) {
     .title {
         margin-top: 12%;

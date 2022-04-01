@@ -6,6 +6,7 @@ import useSWR from "swr";
 import styles from "./Populars.module.css";
 import FooterCard from "../Shared/FooterCard/FooterCard";
 import MoreButton from "../Shared/MoreButton/MoreButton";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -40,7 +41,7 @@ export default function Populars() {
     sliced.forEach((token) => popularTokens.push(token.id))
     const {data, error} = useSWR(`/api/detail?id=${popularTokens.toString()}`, fetcher)
     if (error) return <div>Failed to load</div>
-    if (!data) return <div>Loading...</div>
+    if (!data) return <CircularProgress className={styles.circular}/>
     if (data.length < 1) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
     console.log(data)
     const detailData = Object.values(data)
