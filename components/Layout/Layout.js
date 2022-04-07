@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {useMediaQuery} from "react-responsive";
 import LowerSearchSection from "./components/LowerSearchSection/LowerSearchSection";
 import FilterBar from "./components/FilterBar/FilterBar";
+import Footer from "../Shared/Footer/Footer";
 
 export default function Layout({children, tokens}) {
     const isTabletOrMobile = useMediaQuery({maxWidth: 1224})
@@ -38,6 +39,7 @@ export default function Layout({children, tokens}) {
             {showFilters && <FilterBar/>}
             {showLowerSearchSection && isTabletOrMobile && <LowerSearchSection/>}
             <main>{children}</main>
+            <Footer/>
         </LayoutContext.Provider>
     )
 }

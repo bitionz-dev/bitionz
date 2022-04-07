@@ -1,11 +1,12 @@
 .container {
     justify-content: space-between;
     display: flex;
-    margin: 77px 5.1em 0;
     padding: 30px;
     border-top: 1px solid;
     width: 75%;
     max-width: 1356px;
+    margin: 100px auto auto;
+
 }
 
 .container :global(a) {

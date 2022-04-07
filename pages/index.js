@@ -4,7 +4,6 @@ import Banner from '../components/Shared/Banner/Banner';
 import Suggestions from '../components/Suggestions/Suggestions';
 import Populars from "../components/Populars/Populars";
 import LowerBanner from "../components/LowerBanner/LowerBanner";
-import Footer from "../components/Shared/Footer/Footer";
 import Script from "next/script";
 import {useMediaQuery} from "react-responsive";
 import {loadTokens} from "../lib/fetch-tokens";
@@ -45,7 +44,6 @@ export default function Home({tokens, setTokens}) {
             <Suggestions/>
             <Populars/>
             <LowerBanner/>
-            <Footer/>
         </main>
     </div>)
 }

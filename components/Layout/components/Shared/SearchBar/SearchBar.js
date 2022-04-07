@@ -24,9 +24,9 @@ export default function SearchBar({className, width}) {
         onChange={(e, value, reason, detail) => {
             console.log(value)
             if (reason === "selectOption") {
-                router.push(`detail/${value.id}`)
+                router.push(`/detail/${value.id}`)
             } else if (reason === "createOption") {
-                router.push(`search/${value}`)
+                router.push(`/search/${value}`)
             }
         }}
         sx={{width: width}}
