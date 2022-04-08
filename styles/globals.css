@@ -44,6 +44,10 @@ label, p {
     font-size: 0.9em !important;
 }
 
+.MuiSkeleton-rectangular {
+    margin-bottom: 30px !important;
+}
+
 :root {
     --color-dark-violet: #0C0F23;
     --color-dark-grey: #9F9F9F;

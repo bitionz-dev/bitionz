@@ -6,7 +6,7 @@ import useSWR from "swr";
 import styles from "./Populars.module.css";
 import FooterCard from "../Shared/FooterCard/FooterCard";
 import MoreButton from "../Shared/MoreButton/MoreButton";
-import CircularProgress from '@mui/material/CircularProgress';
+import {Skeleton} from "@mui/material";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -41,18 +41,23 @@ export default function Populars() {
     sliced.forEach((token) => popularTokens.push(token.id))
     const {data, error} = useSWR(`/api/detail?id=${popularTokens.toString()}`, fetcher)
     if (error) return <div>Failed to load</div>
-    if (!data) return <CircularProgress className={styles.circular}/>
-    if (data.length < 1) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
-    console.log(data)
-    const detailData = Object.values(data)
-    console.log(detailData)
+    if (data?.length < 1) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
+    const detailData = data && Object.values(data)
     return (
         <div className={styles.populars}>
             <h2 className={styles.title}>Populares</h2>
             <div className={styles.popularsContainer}>
-                {detailData.map((token) => {
+                {data ? detailData.map((token) => {
                     return (
                         <FooterCard title={token.name} text={token.description.split(".")[0]} imgURL={token.logo}/>
+                    )
+                }) : popularTokens.map((token) => {
+                    return (
+                        <Skeleton variant="rectangular" width={317} height={230}>
+                            <FooterCard title={"demo"}
+                                        text={"small text amount to include the size of a footer card"}
+                                        imgURL='https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/placeholders/2300'/>
+                        </Skeleton>
                     )
                 })}
             </div>

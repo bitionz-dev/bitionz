@@ -8,8 +8,17 @@ import Script from "next/script";
 import {useMediaQuery} from "react-responsive";
 import {loadTokens} from "../lib/fetch-tokens";
 import {useEffect} from "react";
+import Page from "../components/Tools/Page/Page";
 
 export default function Home({tokens, setTokens}) {
+    const page = {
+        name: "Bitionz",
+        meta: {
+            name: "bitionz",
+            description: "main page of bitionz"
+        },
+        bootstrap: true
+    }
     useEffect(() => {
         setTokens(tokens)
     }, [tokens])
@@ -19,26 +28,7 @@ export default function Home({tokens, setTokens}) {
     const isPortrait = useMediaQuery({orientation: 'portrait'})
     const isRetina = useMediaQuery({minResolution: '2dppx'})
     return (<div className={styles.container}>
-        <Head>
-            <title>Bitionz</title>
-            <meta name="Bitionz" content="Search engine metaverse token"/>
-            <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-                integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-                crossOrigin="anonymous"
-            />
-            <link rel="icon" href="/favicon.ico"/>
-        </Head>
-        <Script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin></Script>
-
-        <Script
-            src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-            crossOrigin></Script>
-
-        <Script
-            src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-            crossOrigin></Script>
+        <Page title={page.title} meta={page.meta} bootstrap={page.bootstrap}/>
         <main className={styles.main}>
             <Banner/>
             <Suggestions/>
