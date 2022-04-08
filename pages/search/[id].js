@@ -1,15 +1,14 @@
 import {useContext} from "react";
 import {LayoutContext} from "../../components/Tools/Context/Context";
 import SearchResults from "../../components/SearchResults/SearchResults";
-import {router} from "next/client";
+import {useRouter} from "next/router";
 import Head from "next/head";
 import Script from "next/script";
 
 export default function Search() {
+    const router = useRouter();
     const {id} = router.query
-    console.log(id)
     const {filteredTokens} = useContext(LayoutContext);
-    console.log(filteredTokens)
     const searchResultTokens = filteredTokens.filter((token) => {
         console.log(token.name.toLowerCase().includes(id.toLowerCase()))
         if (token.name.toLowerCase().includes(id.toLowerCase())) return true
