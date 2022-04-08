@@ -36,7 +36,7 @@ export default function SearchResults({filteredTokens, id}) {
                     )
                 }) : popularTokens.map((token) => {
                     return (
-                        <Skeleton variant="rectangular">
+                        <Skeleton variant="rectangular" width={317} height={230}>
                             <FooterCard title={"demo"}
                                         text={"small text amount to include the size of a footer card"}
                                         imgURL='https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/placeholders/2300'/>
