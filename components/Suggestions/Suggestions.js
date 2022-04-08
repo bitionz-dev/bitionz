@@ -100,7 +100,7 @@ export default function Suggestions() {
                         <Skeleton variant="rectangular">
                             <FullCard title={"cripto Country"} text={"lorem ipsum"}
                                       imgURL='https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/placeholders/suggested'/>
-                        </Skeleton>}
+                        </Skeleton>
                         <ButtonNext
                             className={styles.buttonDisabled}><ArrowForwardIosIcon/></ButtonNext>
                     </Slide>
