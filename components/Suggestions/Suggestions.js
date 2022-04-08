@@ -10,7 +10,6 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import FullCard from "../Shared/FullCard/FullCard";
 import useSWR from 'swr'
 import {useMediaQuery} from "react-responsive";
-import {Skeleton} from "@mui/material";
 
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
@@ -20,11 +19,11 @@ export default function Suggestions() {
     const {filteredTokens} = useContext(LayoutContext);
     const suggestedTokens = filteredTokens.slice(0, 8)
     const requiredTokens = []
-    const emptyTokens = ["1", "2", "3", "4"]
     suggestedTokens.forEach((token) => requiredTokens.push(token.id))
     const {data, error} = useSWR(`/api/suggested`, fetcher)
     if (error) return <div>Failed to load</div>
-    if (data?.length === 0) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
+    if (!data) return <CircularProgress className={styles.circular}/>
+    if (data.length === 0) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
 
     data?.sort((a, b) => {
         if (a.id < b.id) {
@@ -52,7 +51,7 @@ export default function Suggestions() {
             totalSlides={slides.length}
         >
             {isDesktopOrLaptop && <Slider>
-                {data ? slides.map((slide, index) => {
+                {slides?.map((slide, index) => {
                     return (<Slide className={styles.slide}>
                         <ButtonBack
                             className={index > 0 ? styles.button : styles.buttonDisabled}><ArrowBackIosIcon/></ButtonBack>
@@ -65,25 +64,12 @@ export default function Suggestions() {
                         <ButtonNext
                             className={index < slides.length - 1 ? styles.button : styles.buttonDisabled}><ArrowForwardIosIcon/></ButtonNext>
                     </Slide>)
-                }) : (<Slide className={styles.slide}>
-                    <ButtonBack
-                        className={styles.buttonDisabled}><ArrowBackIosIcon/></ButtonBack>
-                    {emptyTokens.map((token) => {
-                        return (
-                            <Skeleton variant="rectangular">
-                                <FullCard title={"cripto Country"} text={"lorem ipsum"}
-                                          imgURL='https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/placeholders/suggested'/>
-                            </Skeleton>
-                        )
-                    })}
-                    <ButtonNext
-                        className={styles.buttonDisabled}><ArrowForwardIosIcon/></ButtonNext>
-                </Slide>)}
+                })}
             </Slider>}
 
             {!isDesktopOrLaptop && <Slider>
 
-                {data ? slides.map((slide, index) => {
+                {slides?.map((slide, index) => {
                     return (
                         <Slide className={styles.slide}>
                             <ButtonBack className={styles.button}><ArrowBackIosIcon/></ButtonBack>
@@ -94,17 +80,7 @@ export default function Suggestions() {
                                 className={index < slides.length - 1 ? styles.button : styles.buttonDisabled}><ArrowForwardIosIcon/></ButtonNext>
                         </Slide>
                     )
-                }) : (
-                    <Slide className={styles.slide}>
-                        <ButtonBack className={styles.button}><ArrowBackIosIcon/></ButtonBack>
-                        <Skeleton variant="rectangular">
-                            <FullCard title={"cripto Country"} text={"lorem ipsum"}
-                                      imgURL='https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/placeholders/suggested'/>
-                        </Skeleton>
-                        <ButtonNext
-                            className={styles.buttonDisabled}><ArrowForwardIosIcon/></ButtonNext>
-                    </Slide>
-                )}
+                })}
             </Slider>}
         </CarouselProvider>
     </div>);
