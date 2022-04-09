@@ -5,6 +5,8 @@ import useSWR from "swr";
 import styles from "./SearchResults.module.css";
 import FooterCard from "../Shared/FooterCard/FooterCard";
 import {Button, Skeleton} from "@mui/material";
+import Error from "../Shared/Error/Error";
+import NoResult from "../Shared/NoResult/NoResult";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -23,8 +25,8 @@ export default function SearchResults({filteredTokens, id}) {
     const popularTokens = []
     sliced.forEach((token) => popularTokens.push(token.id))
     const {data, error} = useSWR(`/api/detail?id=${popularTokens.toString()}`, fetcher)
-    if (error) return <div>Failed to load</div>
-    if (data?.length < 1) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
+    if (error) return <Error/>
+    if (data?.length < 1) return <NoResult/>
     const detailData = data && Object.values(data)
     return (
         <div className={styles.populars}>

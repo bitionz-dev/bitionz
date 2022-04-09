@@ -1,5 +1,10 @@
 .desktop {
-    display: none !important
+    display: none !important;
+    cursor: pointer;
+}
+
+.mobile {
+    cursor: pointer;
 }
 
 @media only screen and (min-device-width: 1024px) {

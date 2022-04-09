@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    background-color: #16192C;
+    margin-left: 13.25rem;
+    padding: 7em 1em;
+    margin-right: 13.25rem;
+    margin-top: 70px;
+    color: white;
+    border-radius: 1em;
+}
+
+.title {
+    font-size: 2em;
+    margin-top: 15px;
+}
+
+.description {
+    font-size: 1em !important;
+    margin-top: 15px;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        background-color: #16192C;
+        margin-left: 5%;
+        padding: 4em 1em;
+        margin-right: 5%;
+        margin-top: 24px;
+        color: white;
+        border-radius: 1em;
+    }
+
+    .title {
+        font-size: 1.3em;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .icon {
+        margin-left: 32px;
+    }
+}
+

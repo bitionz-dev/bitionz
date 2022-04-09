@@ -3,6 +3,7 @@ import {LayoutContext} from "../../components/Tools/Context/Context";
 import SearchResults from "../../components/SearchResults/SearchResults";
 import {useRouter} from "next/router";
 import Page from "../../components/Tools/Page/Page";
+import NoResult from "../../components/Shared/NoResult/NoResult";
 
 export default function Search() {
     const page = {
@@ -25,7 +26,7 @@ export default function Search() {
     return (
         <>
             <Page title={page.title} meta={page.meta} bootstrap={page.bootstrap}/>
-            <SearchResults filteredTokens={searchResultTokens} id={id}/>
+            {searchResultTokens.length > 1 ? <SearchResults filteredTokens={searchResultTokens} id={id}/> : <NoResult/>}
         </>
     )
 

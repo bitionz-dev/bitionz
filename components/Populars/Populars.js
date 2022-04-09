@@ -7,6 +7,8 @@ import styles from "./Populars.module.css";
 import FooterCard from "../Shared/FooterCard/FooterCard";
 import MoreButton from "../Shared/MoreButton/MoreButton";
 import {Skeleton} from "@mui/material";
+import NoResult from "../Shared/NoResult/NoResult";
+import Error from "../Shared/Error/Error";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -40,8 +42,8 @@ export default function Populars() {
     const popularTokens = []
     sliced.forEach((token) => popularTokens.push(token.id))
     const {data, error} = useSWR(`/api/detail?id=${popularTokens.toString()}`, fetcher)
-    if (error) return <div>Failed to load</div>
-    if (data?.length < 1) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
+    if (error) return <Error/>
+    if (data?.length < 1) return <NoResult/>
     const detailData = data && Object.values(data)
     return (
         <div className={styles.populars}>
