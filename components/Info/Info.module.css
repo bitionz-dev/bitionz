@@ -37,3 +37,11 @@
 .iconsContainer :global(svg) {
     cursor: pointer;
 }
+
+@media only screen and (max-device-width: 1024px) {
+    .container {
+        flex-flow: column;
+        min-height: 450px;
+        display: flex;
+    }
+}

@@ -6,3 +6,12 @@
     gap: 26px;
     color: white;
 }
+
+@media only screen and (max-device-width: 1024px) {
+.container {
+    margin-left: 5%;
+    padding: 4em 1em;
+    margin-right: 5%;
+    flex-flow: column;
+}
+}
