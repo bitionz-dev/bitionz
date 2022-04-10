@@ -1,0 +1,112 @@
+.carousel {
+    width: 100%;
+    height: 390px;
+    margin-top: 50px;
+}
+
+.title {
+    font-size: 2em;
+    color: white;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+}
+
+.carousel :global(.text-white) {
+    background-color: transparent !important;
+    box-shadow: #371C91 1px 1px 3px 1px;
+}
+
+.carousel :global(.card-img-overlay) {
+    height: 100% !important;
+    width: 100% !important;
+    visibility: hidden;
+    padding-top: 25%;
+}
+
+.carousel :global(.card-img-top) {
+    height: 28%;
+    width: 28%;
+    margin-top: 10%;
+    margin-bottom: 8%;
+    border-radius: 50px;
+}
+
+.carousel :global(.card) {
+    width: 315px;
+    height: 287px;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 38%;
+    display: flex;
+    flex-flow: column;
+}
+
+.carousel :global(.card-img) {
+    height: 100%;
+    width: 100%;
+    align-self: center;
+}
+
+.carrousel .card-body {
+    width: 100%;
+    background-color: #16192C;
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.slide :global(.carousel__inner-slide) {
+    grid-template-columns: 0.1fr 2fr 2fr 2fr 2fr 0.1fr;
+    height: 315px;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    gap: 3%;
+}
+
+.circular {
+    margin-top: 50px;
+}
+
+.buttonDisabled {
+    opacity: 0.1;
+    cursor: default;
+}
+
+
+@media only screen and (max-device-width: 1024px) {
+    .title {
+        font-size: 1.5em;
+        margin-left: 6%;
+        margin-top: 5%;
+    }
+
+    .carousel {
+        width: 97%;
+    }
+
+    .carousel :global(.card) {
+        width: 97%;
+        max-width: 500px;
+    }
+
+    .slide :global(.carousel__inner-slide) {
+        display: grid;
+        grid-template-columns: 0.1fr 2fr 0.1fr;
+        height: 315px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .carousel :global(.card-img-overlay) {
+        visibility: visible;
+    }
+
+    .carousel :global(.card-img) {
+        opacity: 0.3;
+    }
+
+}
+

@@ -4,6 +4,7 @@ import styles from '../../styles/Detail.module.css'
 import useSWR from "swr";
 import Info from "../../components/Info/Info";
 import {Skeleton} from "@mui/material";
+import Suggestions from "../../components/SuggestedCarrousel/Suggestions";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -41,20 +42,23 @@ export default function Detail() {
         )
     }
     return (
-        <div className={styles.container}>
-            <LargeImage imgURL={detail?.logo} altText={"image of the searched token"}
-                        suggested={source === 'suggested'}/>
-            <Info
-                category={detail?.category}
-                name={detail?.name}
-                description={detail?.description}
-                technicalDoc={detail?.urls?.technical_doc}
-                webUrl={detail?.urls?.website}
-                chat={detail?.urls?.chat}
-                twitter={detail?.urls?.twitter}
-                sourceCode={detail?.urls?.source_code}
-                reddit={detail?.urls?.reddit}
-            />
+        <div className={styles.padding}>
+            <div className={styles.container}>
+                <LargeImage imgURL={detail?.logo} altText={"image of the searched token"}
+                            suggested={source === 'suggested'}/>
+                <Info
+                    category={detail?.category}
+                    name={detail?.name}
+                    description={detail?.description}
+                    technicalDoc={detail?.urls?.technical_doc}
+                    webUrl={detail?.urls?.website}
+                    chat={detail?.urls?.chat}
+                    twitter={detail?.urls?.twitter}
+                    sourceCode={detail?.urls?.source_code}
+                    reddit={detail?.urls?.reddit}
+                />
+            </div>
+            <Suggestions/>
         </div>
     )
 }
