@@ -1,9 +1,14 @@
 .container {
     display: flex;
-    width: available;
+    width: 100%;
+    width: -moz-available; /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
     justify-content: center;
     align-items: center;
     height: 400px;
+    background-color: #16192C;
+    border-radius: 1em;
 }
 
 .image {
@@ -12,5 +17,12 @@
 
 .imageCommon {
     border-radius: 1em;
-    height: 50%;
+    height: 20%;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .container {
+        height: 300px;
+    }
+
 }
