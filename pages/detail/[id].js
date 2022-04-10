@@ -12,11 +12,10 @@ export default function Detail() {
     let detail
     if (source === 'suggested') {
         const {data, error} = useSWR(`/api/suggested`, fetcher)
-        console.log(data)
         detail = data?.filter((token) => token.id.toString() === id)[0]
     } else {
         const {data, error} = useSWR(`/api/detail?id=${id}`, fetcher)
-        detail = data
+        detail = data[0]
     }
     return (
         <div className={styles.container}>
