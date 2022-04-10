@@ -18,7 +18,6 @@ export default function Detail() {
         const {data, error} = useSWR(`/api/detail?id=${id}`, fetcher)
         detail = data
     }
-    const {website, twitter, chat, reddit, technical_doc, source_code} = detail?.urls
     return (
         <div className={styles.container}>
             <LargeImage imgURL={detail?.logo} altText={"image of the searched token"}/>
@@ -26,12 +25,12 @@ export default function Detail() {
                 category={detail?.category}
                 name={detail?.name}
                 description={detail?.description}
-                technicalDoc={technical_doc}
-                webUrl={website}
-                chat={chat}
-                twitter={twitter}
-                sourceCode={source_code}
-                reddit={reddit}
+                technicalDoc={detail?.urls?.technical_doc}
+                webUrl={detail?.urls?.website}
+                chat={detail?.urls?.chat}
+                twitter={detail?.urls?.twitter}
+                sourceCode={detail?.urls?.source_code}
+                reddit={detail?.urls?.reddit}
             />
         </div>
     )
