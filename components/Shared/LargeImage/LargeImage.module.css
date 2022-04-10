@@ -1,7 +1,16 @@
 .container {
-
+    display: flex;
+    width: available;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
 }
 
 .image {
     border-radius: 1em;
+}
+
+.imageCommon {
+    border-radius: 1em;
+    height: 50%;
 }

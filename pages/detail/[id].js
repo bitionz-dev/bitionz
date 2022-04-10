@@ -19,7 +19,7 @@ export default function Detail() {
     }
     return (
         <div className={styles.container}>
-            <LargeImage imgURL={detail?.logo} altText={"image of the searched token"}/>
+            <LargeImage imgURL={detail?.logo} altText={"image of the searched token"} suggested={source === 'suggested'}/>
             <Info
                 category={detail?.category}
                 name={detail?.name}
