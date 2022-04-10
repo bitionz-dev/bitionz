@@ -24,7 +24,7 @@
 }
 
 .chip {
-    color: white;
+    color: white !important;
 }
 
 .name {
