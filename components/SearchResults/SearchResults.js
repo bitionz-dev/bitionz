@@ -7,10 +7,12 @@ import FooterCard from "../Shared/FooterCard/FooterCard";
 import {Button, Skeleton} from "@mui/material";
 import Error from "../Shared/Error/Error";
 import NoResult from "../Shared/NoResult/NoResult";
+import {useRouter} from "next/router";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function SearchResults({filteredTokens, id}) {
+    const router = useRouter()
     const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
     const [more, setMore] = useState(false);
     const [desktopLimit, setDesktopLimit] = useState(12);
@@ -34,7 +36,8 @@ export default function SearchResults({filteredTokens, id}) {
             <div className={styles.popularsContainer}>
                 {data ? detailData.map((token) => {
                     return (
-                        <FooterCard title={token.name} text={token.description.split(".")[0]} imgURL={token.logo}/>
+                        <FooterCard title={token.name} text={token.description.split(".")[0]} imgURL={token.logo}
+                                    onClick={() => router.push(`/detail/${token.id}?source=populars`)}/>
                     )
                 }) : popularTokens.map((token) => {
                     return (

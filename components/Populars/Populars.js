@@ -9,10 +9,12 @@ import MoreButton from "../Shared/MoreButton/MoreButton";
 import {Skeleton} from "@mui/material";
 import NoResult from "../Shared/NoResult/NoResult";
 import Error from "../Shared/Error/Error";
+import {useRouter} from "next/router";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Populars() {
+    const router = useRouter()
     const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
     const {filteredTokens} = useContext(LayoutContext);
     const [more, setMore] = useState(false);
@@ -51,7 +53,8 @@ export default function Populars() {
             <div className={styles.popularsContainer}>
                 {data ? detailData.map((token) => {
                     return (
-                        <FooterCard title={token.name} text={token.description.split(".")[0]} imgURL={token.logo}/>
+                        <FooterCard title={token.name} text={token.description.split(".")[0]} imgURL={token.logo}
+                                    onClick={() => router.push(`/detail/${token.id}?source=populars`)}/>
                     )
                 }) : popularTokens.map((token) => {
                     return (
