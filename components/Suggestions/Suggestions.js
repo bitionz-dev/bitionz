@@ -78,10 +78,14 @@ export default function Suggestions() {
                         <Slide className={styles.slide}>
                             <ButtonBack className={styles.button}><ArrowBackIosIcon/></ButtonBack>
                             {!Array.isArray(slide) &&
-                                <FullCard title={slide.name} text={slide.description.split(".")[0]}
-                                          imgURL={slide.logo}
-                                          onClick={() => router.push(`/detail/${token.id}?source=suggested`)}
-                                          onTouchStart={() => () => router.push(`/detail/${token.id}?source=suggested`)}/>}
+                                <div onClick={() => router.push(`/detail/${token.id}?source=suggested`)}
+                                     onTouchStart={() => () => router.push(`/detail/${token.id}?source=suggested`)}
+                                     style={{cursor: 'pointer !important'}}>
+                                    <FullCard title={slide.name} text={slide.description.split(".")[0]}
+                                              imgURL={slide.logo}
+                                              onClick={() => router.push(`/detail/${token.id}?source=suggested`)}
+                                              onTouchStart={() => () => router.push(`/detail/${token.id}?source=suggested`)}/>
+                                </div>}
                             <ButtonNext
                                 className={index < slides.length - 1 ? styles.button : styles.buttonDisabled}><ArrowForwardIosIcon/></ButtonNext>
                         </Slide>
