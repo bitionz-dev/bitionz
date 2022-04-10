@@ -10,11 +10,13 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import FullCard from "../Shared/FullCard/FullCard";
 import useSWR from 'swr'
 import {useMediaQuery} from "react-responsive";
+import {useRouter} from "next/router";
 
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Suggestions() {
+    const router = useRouter()
     const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
     const {filteredTokens} = useContext(LayoutContext);
     const suggestedTokens = filteredTokens.slice(0, 8)
@@ -57,10 +59,10 @@ export default function Suggestions() {
                             className={index > 0 ? styles.button : styles.buttonDisabled}><ArrowBackIosIcon/></ButtonBack>
                         {Array.isArray(slide) && slide.map((token) => {
                             return (<FullCard title={token.name} text={token.description.split(".")[0]}
-                                              imgURL={token.logo}/>)
+                                              imgURL={token.logo} onClick={() => router.push(`/detail/${token.id}?source=suggested`)}/>)
                         })}
                         {!Array.isArray(slide) && <FullCard title={slide.name} text={slide.description}
-                                                            imgURL={slide.logo}/>}
+                                                            imgURL={slide.logo} onClick={() => router.push(`/detail/${token.id}?source=suggested`)}/>}
                         <ButtonNext
                             className={index < slides.length - 1 ? styles.button : styles.buttonDisabled}><ArrowForwardIosIcon/></ButtonNext>
                     </Slide>)
@@ -75,7 +77,7 @@ export default function Suggestions() {
                             <ButtonBack className={styles.button}><ArrowBackIosIcon/></ButtonBack>
                             {!Array.isArray(slide) &&
                                 <FullCard title={slide.name} text={slide.description.split(".")[0]}
-                                          imgURL={slide.logo}/>}
+                                          imgURL={slide.logo} onClick={() => router.push(`/detail/${token.id}?source=suggested`)}/>}
                             <ButtonNext
                                 className={index < slides.length - 1 ? styles.button : styles.buttonDisabled}><ArrowForwardIosIcon/></ButtonNext>
                         </Slide>

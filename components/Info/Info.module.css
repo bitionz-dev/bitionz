@@ -1,0 +1,39 @@
+.moreButton {
+    color: white !important;
+    text-transform: capitalize !important;
+    border-color: white !important;
+    background-color: #505EB2 !important;
+    margin-right: auto !important;
+}
+
+.iconsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.tecDocContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.chip {
+    color: white;
+}
+
+.name {
+    font-size: 2em;
+}
+
+.description {
+}
+
+.iconsContainer :global(svg) {
+    cursor: pointer;
+}
