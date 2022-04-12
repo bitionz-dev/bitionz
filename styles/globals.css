@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import 'react-phone-input-2/lib/style.css';
+@import 'react-country-dropdown/dist/index.css';
 
 @tailwind base;
 @tailwind components;
