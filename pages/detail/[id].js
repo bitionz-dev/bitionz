@@ -5,11 +5,13 @@ import useSWR from "swr";
 import Info from "../../components/Info/Info";
 import {Skeleton} from "@mui/material";
 import Suggestions from "../../components/SuggestedCarrousel/Suggestions";
+import {useMediaQuery} from "react-responsive";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Detail() {
     const router = useRouter()
+    const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
     const {id, source} = router.query
     let detail
     if (source === 'suggested') {
@@ -42,23 +44,26 @@ export default function Detail() {
         )
     }
     return (
-        <div className={styles.padding}>
-            <div className={styles.container}>
-                <LargeImage imgURL={detail?.logo} altText={"image of the searched token"}
-                            suggested={source === 'suggested'}/>
-                <Info
-                    category={detail?.category}
-                    name={detail?.name}
-                    description={detail?.description}
-                    technicalDoc={detail?.urls?.technical_doc}
-                    webUrl={detail?.urls?.website}
-                    chat={detail?.urls?.chat}
-                    twitter={detail?.urls?.twitter}
-                    sourceCode={detail?.urls?.source_code}
-                    reddit={detail?.urls?.reddit}
-                />
+        <>
+            <div className={styles.padding}>
+                <div className={styles.container}>
+                    <LargeImage imgURL={detail?.logo} altText={"image of the searched token"}
+                                suggested={source === 'suggested'}/>
+                    <Info
+                        category={detail?.category}
+                        name={detail?.name}
+                        description={detail?.description}
+                        technicalDoc={detail?.urls?.technical_doc}
+                        webUrl={detail?.urls?.website}
+                        chat={detail?.urls?.chat}
+                        twitter={detail?.urls?.twitter}
+                        sourceCode={detail?.urls?.source_code}
+                        reddit={detail?.urls?.reddit}
+                    />
+                </div>
+                {isDesktopOrLaptop && <Suggestions/>}
             </div>
-            <Suggestions/>
-        </div>
+            {!isDesktopOrLaptop && <Suggestions/>}
+        </>
     )
 }

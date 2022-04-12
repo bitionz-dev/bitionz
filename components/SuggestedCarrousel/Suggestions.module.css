@@ -24,8 +24,8 @@
 }
 
 .carousel :global(.card-img-top) {
-    height: 28%;
-    width: 28%;
+    height: 29%;
+    width: 29%;
     margin-top: 10%;
     margin-bottom: 8%;
     border-radius: 50px;
@@ -47,7 +47,7 @@
     align-self: center;
 }
 
-.carrousel .card-body {
+.carousel :global(.card-body) {
     width: 100%;
     background-color: #16192C;
     height: 100%;
@@ -84,12 +84,17 @@
     }
 
     .carousel {
-        width: 97%;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+        margin-top: 20px;
     }
 
     .carousel :global(.card) {
         width: 97%;
         max-width: 500px;
+        margin-top: 24px;
     }
 
     .slide :global(.carousel__inner-slide) {
@@ -98,6 +103,7 @@
         height: 315px;
         align-items: center;
         justify-items: center;
+        gap: 0;
     }
 
     .carousel :global(.card-img-overlay) {
@@ -107,6 +113,11 @@
     .carousel :global(.card-img) {
         opacity: 0.3;
     }
+    .carousel :global(.card-img-top) {
+        height: 29%;
+        width: 29%;
+    }
+
 
 }
 
