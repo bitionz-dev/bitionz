@@ -22,9 +22,7 @@ export default function Page({title, meta, bootstrap, email = false}) {
 
             {bootstrap &&
                 <Script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossOrigin></Script>}
-            {email && <Script type="text/javascript"
-                              src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-            </Script>}
+            {email && <Script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>}
         </>
     )
 

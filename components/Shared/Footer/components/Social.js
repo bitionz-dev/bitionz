@@ -10,8 +10,8 @@ import Link from 'next/link'
 export default function Social() {
     const router = useRouter()
     return (<div className={styles.socials}>
-        <Link href='/about'>
-            <a href={"/about"}>Nosotros</a>
+        <Link href="/about">
+            <a>Nosotros</a>
         </Link>
         <div className={styles.socialsIcons}>
             <a href={"#"}> <EmailIcon/></a>
