@@ -1,6 +1,5 @@
 import {Button} from "@mui/material";
 import styles from "./PromoteButton.module.css"
-import classNames from "classnames"
 import {useRouter} from "next/router";
 
 export default function PromoteButton({className}) {

@@ -1,0 +1,29 @@
+.padding {
+    padding-right: 10.5%;
+    padding-left: 10.5%;
+}
+
+.content {
+    display: grid;
+    margin-top: 100px;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+
+.title {
+    font-size: 1.5em;
+    align-self: center;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .padding {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .content {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        margin-top: 0;
+    }
+}

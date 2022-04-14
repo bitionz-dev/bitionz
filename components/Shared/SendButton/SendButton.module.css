@@ -1,0 +1,11 @@
+.moreButton {
+    color: white !important;
+    text-transform: capitalize !important;
+    border-color: white !important;
+    background-color: #505EB2 !important;
+    display: table !important;
+    margin-right: auto;
+    margin-top: 15px;
+    padding: 9px 50px;
+
+}

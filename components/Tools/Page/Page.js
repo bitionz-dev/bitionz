@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Script from "next/script";
 
-export default function Page({title, meta, bootstrap}) {
+export default function Page({title, meta, bootstrap, email = false}) {
     return (
         <>
             <Head>
@@ -22,6 +22,9 @@ export default function Page({title, meta, bootstrap}) {
 
             {bootstrap &&
                 <Script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossOrigin></Script>}
+            {email && <Script type="text/javascript"
+                              src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+            </Script>}
         </>
     )
 

@@ -5,9 +5,11 @@ import Input from '@mui/material/Input';
 import PhoneInput from 'react-phone-input-2'
 import countryList from 'react-select-country-list'
 import {useForm} from 'react-hook-form';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Select, TextField} from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
+import emailjs from '@emailjs/browser';
+import SendButton from "../SendButton/SendButton";
 
 export default function Form() {
     const {
@@ -19,8 +21,8 @@ export default function Form() {
     const countries = countryList().getLabels()
     const [country, setCountry] = useState('United States')
     const [phone, setPhone] = useState(null)
-
-    const onSubmit = (data) => console.log(data);
+    useEffect(() => emailjs.init(process.env.NEXT_PUBLIC_EPK), [])
+    const onSubmit = (emailData) => emailjs.send("service_393hams", "template_nek96wm", emailData);
     return <div>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
             <Input {...register('name', {required: true})} fullWidth placeholder={"Metaverse name"}
@@ -56,7 +58,7 @@ export default function Form() {
             }}
                        className={styles.input}
             />
-            <input type="submit" value="Submit"/>
+            <SendButton/>
         </form>
     </div>
 }

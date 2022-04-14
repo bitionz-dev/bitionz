@@ -11,7 +11,8 @@ export default function Promote() {
             name: "bitionz promote",
             description: "promote section of bitionz"
         },
-        bootstrap: true
+        bootstrap: true,
+        email: true
     }
     return (
         <>
