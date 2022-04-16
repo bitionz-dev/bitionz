@@ -4,6 +4,7 @@ import PromoteButton from "./components/PromoteButton/PromoteButton";
 import Logo from "./components/Logo/Logo"
 import Icons from "./components/Icons/Icons"
 import {useMediaQuery} from "react-responsive";
+import LangSelector from "../Shared/LangSelector/LangSelector";
 
 export default function NavBar() {
     const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})

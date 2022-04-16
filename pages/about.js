@@ -18,14 +18,13 @@ export default function Promote() {
             <Page title={page.title} meta={page.meta} bootstrap={page.bootstrap}/>
             <AboutBanner/>
             <div className={styles.content}>
-                <h3 className={styles.title}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industrys</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                <h3 className={styles.title}>We are a software company, specialized in blockchain technology</h3>
+                <p>Our company is mainly a seeker of metaverses, concentrates the information about them, for its
+                    design, setting and functionalities, we are talking about a metaverse of metaverses, with portals
+                    that transport us to where we want. It is an access point to the entire existing metaversal network
+                    and that expands more every day.
+                    We offer services for all those who wish to enter the world of metaverses, blockchain and NFTS.
+                    Having various exclusive functions for companies and private users.</p>
             </div>
         </div>
     )

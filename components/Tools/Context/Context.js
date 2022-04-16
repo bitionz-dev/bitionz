@@ -17,5 +17,7 @@ export const LayoutContext = React.createContext({
     },
     tokens: [],
     setFilteredTokens: () => {},
-    filteredTokens: []
+    filteredTokens: [],
+    lang: "en",
+    setLang: () => {}
 });

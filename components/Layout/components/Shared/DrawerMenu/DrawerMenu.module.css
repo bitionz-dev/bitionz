@@ -1,0 +1,23 @@
+.backIcon {
+    color: var(--color-light-grey);
+    justify-content: center !important;
+}
+
+.iconContainer {
+    justify-content: flex-end !important;
+}
+
+.iconItem {
+    min-width: 0 !important;
+}
+
+.separator {
+    margin: 1rem 16px;
+    background-color: var(--color-light-grey);
+}
+
+.buttons {
+    display: flex;
+    margin-top: 18px;
+    flex-flow: column;
+}

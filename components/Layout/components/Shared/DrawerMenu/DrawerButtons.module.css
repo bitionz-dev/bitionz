@@ -1,0 +1,24 @@
+.promoteButton {
+    color: var(--color-light-grey) !important;
+    text-transform: capitalize !important;
+    border-color: white !important;
+}
+
+.loginButton {
+    color: var(--color-light-grey)  !important;
+    text-transform: capitalize !important;
+    width: 191px;
+    justify-content: left;
+}
+
+.menuGrid {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.languageSelector :global(fieldset) {
+    color: white !important;;
+    border-color: white !important;;
+
+}
