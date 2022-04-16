@@ -22,6 +22,8 @@
 
 .searchContainer {
     gap: 3%;
+    width: 60%;
+    margin: auto;
 }
 
 .promoteContainer :global(button) {
