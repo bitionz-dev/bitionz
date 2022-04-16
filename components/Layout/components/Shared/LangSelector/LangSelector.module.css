@@ -1,0 +1,37 @@
+.input {
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px 2px grey;
+    padding: 5px 10px;
+    height: 38px;
+    width: min-content;
+}
+
+.input :global(fieldset) {
+    border: none !important;
+}
+
+.input :global(fieldset:hover) {
+    border-color: white !important;
+}
+
+.input :global(div:hover) {
+    border-color: white !important;
+    color: white !important;
+}
+
+.input :global(#input-search-upperBar-label) {
+    color: var(--color-dark-grey) !important;;
+}
+
+.input :global(input) {
+    color: white !important;;
+}
+
+.input :global(label) {
+    color: white !important;
+    visibility: hidden;
+}
+
+.input :global(.MuiSelect-select) {
+    color: white !important;
+}

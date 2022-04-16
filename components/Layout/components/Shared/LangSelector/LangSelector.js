@@ -5,6 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import {useContext} from "react";
 import {LayoutContext} from "../../../../Tools/Context/Context";
+import styles from "./LangSelector.module.css";
 
 export default function LangSelector() {
     const {setLang} = useContext(LayoutContext);
@@ -16,12 +17,12 @@ export default function LangSelector() {
     return (
         <Box sx={{minWidth: 120}}>
             <FormControl fullWidth>
-                <InputLabel id="lang-selector-label">Lang</InputLabel>
                 <Select
                     labelId="langSelector"
                     id="lang-selector"
                     defaultValue={"en"}
                     onChange={handleChange}
+                    className={styles.input}
                 >
                     <MenuItem value={"es"}>ES</MenuItem>
                     <MenuItem value={"en"}>EN</MenuItem>
