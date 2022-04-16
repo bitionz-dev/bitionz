@@ -17,7 +17,7 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Suggestions() {
     const router = useRouter()
-    const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
+    const isDesktopOrLaptop = useMediaQuery({minWidth: 768})
     const {filteredTokens} = useContext(LayoutContext);
     const suggestedTokens = filteredTokens.slice(0, 8)
     const requiredTokens = []
