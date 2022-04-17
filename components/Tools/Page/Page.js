@@ -8,8 +8,10 @@ import {LayoutContext} from "../Context/Context";
 
 export default function Page({title, meta, bootstrap, email = false}) {
     const {lang} = useContext(LayoutContext);
+    const description = "Our company is mainly a seeker of metaverses, concentrates the information about them, for its design, setting and functionalities, we are talking about a metaverse of metaverses, with portals that transport us to where we want. It is an access point to the entire existing metaversal network and that expands more every day.\n" +
+        "We offer services for all those who wish to enter the world of metaverses, blockchain and NFT'S. Having various exclusive functions for companies and private users."
     i18n
-        .use(initReactI18next) // passes i18n down to react-i18next
+        .use(initReactI18next)
         .init({
             resources: {
                 es: {
@@ -18,7 +20,26 @@ export default function Page({title, meta, bootstrap, email = false}) {
                         "Filters": "Filtros",
                         "Promote metaverse": "Promocionar metaverso",
                         "Suggestions": "Sugerencias",
-                        "Most Populars": "Populares"
+                        "Most Populars": "Populares",
+                        "About us": "Nosotros",
+                        "Technical document": "Documento técnico",
+                        "Go to the website": "ir al sitio web",
+                        "You might be interested...": "Te podría interesar...",
+                        "Promote your metaverse": "Promociona tu metaverso",
+                        "Consult for a customized plan": "Consultar por un plan a medida",
+                        "Complete the form and we will contact you as soon as possible": "Completa el formulario y a la brevedad te contactaremos",
+                        "Metaverse name": "Nombre del metaverso",
+                        "Web address": "Dirección web",
+                        "Phone number": "Número de teléfono",
+                        "Message": "Mensaje",
+                        "Send": "Enviar",
+                        "We are a software company, specialized in blockchain technology": "Somos una empresa de software, especializada en tecnologia blockchain",
+                        "Our company is mainly a seeker of metaverses, concentrates the information about them, for its design, setting and functionalities, we are talking about a metaverse of metaverses, with portals that transport us to where we want. It is an access point to the entire existing metaversal network and that expands more every day. We offer services for all those who wish to enter the world of metaverses, blockchain and NFT'S. Having various exclusive functions for companies and private users.": "Nuestra compañia es principalmente un buscador de metaversos, concentra la  información de los mismos, por su diseño, ambientación y funcionalidades\n" +
+                            ", estamos hablando de un metaverso de metaversos, con portales que nos \n" +
+                            "transportan a donde deseemos. Es un punto de acceso hacia toda la red \n" +
+                            "metaversal existente y que cada día se expande más. \n" +
+                            "Ofrecemos servicios para todos aquellos que desean incursionar en el mundo de los metaversos, blockchain y nft´s. Teniendo diversas funciones \n" +
+                            "exclusivas para empresas y usuarios particulares."
                     }
                 }
             },

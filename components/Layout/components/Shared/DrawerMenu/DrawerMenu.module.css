@@ -21,7 +21,7 @@
     margin-top: 18px;
     flex-flow: column;
     align-items: flex-start;
-    padding: 1em;
+    padding: 1em !important;
 }
 
 .selector {

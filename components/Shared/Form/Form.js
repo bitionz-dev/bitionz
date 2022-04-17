@@ -10,8 +10,10 @@ import {Select, TextField} from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import emailjs from '@emailjs/browser';
 import SendButton from "../SendButton/SendButton";
+import {useTranslation} from "react-i18next";
 
 export default function Form() {
+    const {t} = useTranslation();
     const {
         register,
         handleSubmit,
@@ -25,11 +27,13 @@ export default function Form() {
     const onSubmit = (emailData) => emailjs.send("service_393hams", "template_nek96wm", emailData);
     return <div>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
-            <Input {...register('name', {required: true})} fullWidth placeholder={"Metaverse name"}
+            <Input {...register('name', {required: true})} autoComplete="off" fullWidth
+                   placeholder={t("Metaverse name")}
                    className={styles.input}/>
-            <Input {...register('webAddress', {required: true})} fullWidth placeholder={"Web address"}
+            <Input {...register('webAddress', {required: true})} autoComplete="off" fullWidth
+                   placeholder={t("Web address")}
                    className={styles.input}/>
-            <Input {...register('email', {required: true})} fullWidth placeholder={"Email"}
+            <Input {...register('email', {required: true})} autoComplete="off" fullWidth placeholder={"Email"}
                    className={styles.input}/>
             <PhoneInput
                 {...register('phone', {required: true})}
@@ -39,7 +43,7 @@ export default function Form() {
                     setPhone(phone)
                     setValue("phone", phone)
                 }}
-                placeholder={"Phone number"}
+                placeholder={t("Phone number")}
             />
             <Select
                 defaultValue={'Country'}
@@ -53,7 +57,7 @@ export default function Form() {
                 className={styles.input}
             > {countries.map(country => <MenuItem value={country}>{country}</MenuItem>)}
             </Select>
-            <TextField placeholder={"Message"} onChange={(event) => {
+            <TextField autoComplete="off" placeholder={t("Message")} onChange={(event) => {
                 setValue("message", event.target.value)
             }}
                        className={styles.input}

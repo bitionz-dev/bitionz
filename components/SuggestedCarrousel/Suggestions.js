@@ -12,21 +12,23 @@ import useSWR from 'swr'
 import {useMediaQuery} from "react-responsive";
 import {useRouter} from "next/router";
 import FooterCard from "../Shared/FooterCard/FooterCard";
+import {useTranslation} from "react-i18next";
 
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Suggestions() {
+    const {t} = useTranslation();
     const router = useRouter()
     const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
-    const {filteredTokens} = useContext(LayoutContext);
+    const {filteredTokens, lang} = useContext(LayoutContext);
     const suggestedTokens = filteredTokens.slice(0, 8)
     const requiredTokens = []
     suggestedTokens.forEach((token) => requiredTokens.push(token.id))
-    const {data, error} = useSWR(`/api/suggested`, fetcher)
-    if (error) return <div>Failed to load</div>
+    const {data, error} = useSWR(`/api/suggested?lang=${lang}`, fetcher)
+    if (error) return <></>
     if (!data) return <CircularProgress className={styles.circular}/>
-    if (data.length === 0) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
+    if (data.length === 0) return <></>
 
     data?.sort((a, b) => {
         if (a.id < b.id) {
@@ -47,7 +49,7 @@ export default function Suggestions() {
         }
     }
     return (<div className={styles.carousel}>
-        <h2 className={styles.title}>Te podría interesar</h2>
+        <h2 className={styles.title}>{t("You might be interested...")}</h2>
         <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={125}
