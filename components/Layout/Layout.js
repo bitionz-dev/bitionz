@@ -6,6 +6,7 @@ import LowerSearchSection from "./components/LowerSearchSection/LowerSearchSecti
 import FilterBar from "./components/FilterBar/FilterBar";
 import Footer from "../Shared/Footer/Footer";
 import DrawerMenu from "./components/Shared/DrawerMenu/DrawerMenu";
+import Page from "../Tools/Page/Page";
 
 export default function Layout({children, tokens}) {
     const isTabletOrMobile = useMediaQuery({maxWidth: 1224})
@@ -17,6 +18,15 @@ export default function Layout({children, tokens}) {
     const [filteredTokens, setFilteredTokens] = useState(tokens);
     const [showDrawerMenu, setShowDrawerMenu] = useState(false);
     const [lang, setLang] = useState("en");
+    const page = {
+        name: "Bitionz | Promote",
+        meta: {
+            name: "bitionz promote",
+            description: "promote section of bitionz"
+        },
+        bootstrap: true,
+        email: true
+    }
     useEffect(() => {
         setFilteredTokens(tokens)
     }, [tokens])
@@ -42,6 +52,7 @@ export default function Layout({children, tokens}) {
             lang: lang,
             setLang: setLang
         }}>
+            <Page title={page.title} meta={page.meta} bootstrap={page.bootstrap}/>
             <NavBar/>
             {showDrawerMenu && <DrawerMenu/>}
             {showFilters && <FilterBar/>}

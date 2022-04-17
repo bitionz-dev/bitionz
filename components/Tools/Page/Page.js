@@ -6,10 +6,8 @@ import {useContext} from "react";
 import {LayoutContext} from "../Context/Context";
 
 
-export default function Page({title, meta, bootstrap, email = false}) {
+export default function Page({title, meta, bootstrap, email = true}) {
     const {lang} = useContext(LayoutContext);
-    const description = "Our company is mainly a seeker of metaverses, concentrates the information about them, for its design, setting and functionalities, we are talking about a metaverse of metaverses, with portals that transport us to where we want. It is an access point to the entire existing metaversal network and that expands more every day.\n" +
-        "We offer services for all those who wish to enter the world of metaverses, blockchain and NFT'S. Having various exclusive functions for companies and private users."
     i18n
         .use(initReactI18next)
         .init({
@@ -39,7 +37,12 @@ export default function Page({title, meta, bootstrap, email = false}) {
                             "transportan a donde deseemos. Es un punto de acceso hacia toda la red \n" +
                             "metaversal existente y que cada día se expande más. \n" +
                             "Ofrecemos servicios para todos aquellos que desean incursionar en el mundo de los metaversos, blockchain y nft´s. Teniendo diversas funciones \n" +
-                            "exclusivas para empresas y usuarios particulares."
+                            "exclusivas para empresas y usuarios particulares.",
+                        "Discover more": "Descubrir más",
+                        "No results found": "No hay coincidencias con tú búsqueda",
+                        "Try another term": "Prueba con otro término",
+                        "Something went wrong": "Algo salió mal",
+                        "Try again later while we fix the issue": "Puedes volver a intentar mientras trabajamos para solucionarlo"
                     }
                 }
             },

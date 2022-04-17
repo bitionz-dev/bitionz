@@ -28,7 +28,6 @@ export default function Home({tokens, setTokens}) {
     const isPortrait = useMediaQuery({orientation: 'portrait'})
     const isRetina = useMediaQuery({minResolution: '2dppx'})
     return (<div className={styles.container}>
-        <Page title={page.title} meta={page.meta} bootstrap={page.bootstrap}/>
         <main className={styles.main}>
             <Banner/>
             <Suggestions/>

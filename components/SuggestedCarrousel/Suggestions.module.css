@@ -59,6 +59,7 @@
     display: flex;
     flex-flow: column;
     justify-content: space-between;
+    padding-bottom: 3em;
 }
 
 .slide :global(.carousel__inner-slide) {

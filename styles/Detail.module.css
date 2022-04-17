@@ -1,10 +1,13 @@
 .container {
     display: flex;
     flex-flow: row;
-
     justify-content: center;
     gap: 26px;
     color: white;
+}
+
+.container :global(.card) {
+    background-color: transparent !important;
 }
 
 .padding {
