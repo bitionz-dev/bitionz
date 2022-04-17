@@ -5,12 +5,14 @@ import {createFilterOptions, TextField} from "@mui/material";
 import {useContext} from "react";
 import {useRouter} from 'next/router'
 import {LayoutContext} from "../../../../Tools/Context/Context";
+import {useTranslation} from "react-i18next";
 
 const filterOptions = createFilterOptions({
     matchFrom: 'any', stringify: (option) => option.name,
 });
 
 export default function SearchBar({className, width}) {
+    const {t} = useTranslation();
     const router = useRouter()
     const {filteredTokens} = useContext(LayoutContext);
     return <Autocomplete
@@ -30,7 +32,7 @@ export default function SearchBar({className, width}) {
             }
         }}
         sx={{width: width}}
-        renderInput={(params) => <TextField {...params} label="Buscá tu metaverso..."/>}
+        renderInput={(params) => <TextField {...params} label={t("Search metaverse...")}/>}
         filterOptions={filterOptions}
         options={filteredTokens}/>
 }

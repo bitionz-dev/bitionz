@@ -11,6 +11,10 @@
     margin-bottom: 2%;
 }
 
+.carousel :global(.carousel__slide) {
+    padding-bottom: 10% !important;
+}
+
 .carousel :global(.text-white) {
     background-color: transparent !important;
     box-shadow: #371C91 1px 1px 3px 1px;

@@ -11,21 +11,23 @@ import FullCard from "../Shared/FullCard/FullCard";
 import useSWR from 'swr'
 import {useMediaQuery} from "react-responsive";
 import {useRouter} from "next/router";
+import {useTranslation} from "react-i18next";
 
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Suggestions() {
     const router = useRouter()
+    const {t} = useTranslation();
     const isDesktopOrLaptop = useMediaQuery({minWidth: 768})
     const {filteredTokens} = useContext(LayoutContext);
     const suggestedTokens = filteredTokens.slice(0, 8)
     const requiredTokens = []
     suggestedTokens.forEach((token) => requiredTokens.push(token.id))
     const {data, error} = useSWR(`/api/suggested`, fetcher)
-    if (error) return <div>Failed to load</div>
+    if (error) return <></>
     if (!data) return <CircularProgress className={styles.circular}/>
-    if (data.length === 0) return <div>No se encontraron resultados, prueba otra vez cambiando los filtros</div>
+    if (data.length === 0) return <></>
 
     data?.sort((a, b) => {
         if (a.id < b.id) {
@@ -46,7 +48,7 @@ export default function Suggestions() {
         }
     }
     return (<div className={styles.carousel}>
-        <h2 className={styles.title}>Sugerencias</h2>
+        <h2 className={styles.title}>{t("Suggestions")}</h2>
         <CarouselProvider
             naturalSlideWidth={100}
             naturalSlideHeight={125}

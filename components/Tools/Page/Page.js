@@ -1,7 +1,33 @@
 import Head from "next/head";
 import Script from "next/script";
+import i18n from "i18next";
+import {initReactI18next} from "react-i18next";
+import {useContext} from "react";
+import {LayoutContext} from "../Context/Context";
+
 
 export default function Page({title, meta, bootstrap, email = false}) {
+    const {lang} = useContext(LayoutContext);
+    i18n
+        .use(initReactI18next) // passes i18n down to react-i18next
+        .init({
+            resources: {
+                es: {
+                    translation: {
+                        "Search metaverse...": "Busca tu metaverso...",
+                        "Filters": "Filtros",
+                        "Promote metaverse": "Promocionar metaverso",
+                        "Suggestions": "Sugerencias"
+                    }
+                }
+            },
+            lng: lang,
+            fallbackLng: "en",
+
+            interpolation: {
+                escapeValue: false
+            }
+        });
     return (
         <>
             <Head>

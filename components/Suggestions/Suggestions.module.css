@@ -24,7 +24,7 @@
 }
 
 .carousel :global(.carousel__slide) {
-
+    padding-bottom: 10% !important;
 }
 
 .carousel :global(.card) {
