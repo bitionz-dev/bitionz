@@ -53,6 +53,21 @@ label, p {
     margin-bottom: 30px !important;
 }
 
+.navBarLine {
+    color: #E4E4E4;
+}
+
+.navBarLineFooter {
+    color: #E4E4E4;
+    margin-top: 100px !important;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .navBarLineFooter {
+        margin-top: 30px !important;
+    }
+}
+
 :root {
     --color-dark-violet: #0C0F23;
     --color-dark-grey: #9F9F9F;

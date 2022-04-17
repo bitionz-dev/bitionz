@@ -2,10 +2,9 @@
     justify-content: space-between;
     display: flex;
     padding: 30px;
-    border-top: 1px solid;
     width: 75%;
     max-width: 1356px;
-    margin: 100px auto auto;
+    margin: auto auto;
 
 }
 
@@ -27,7 +26,7 @@
 .socials {
     display: flex;
     flex-flow: column;
-    gap: 6px;
+    gap: 13px;
     text-align: right;
 }
 

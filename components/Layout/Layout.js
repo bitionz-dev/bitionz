@@ -57,7 +57,9 @@ export default function Layout({children, tokens}) {
             {showDrawerMenu && <DrawerMenu/>}
             {showFilters && <FilterBar/>}
             {showLowerSearchSection && isTabletOrMobile && <LowerSearchSection/>}
+            <hr className={"navBarLine"}/>
             <main>{children}</main>
+            <hr className={"navBarLineFooter"}/>
             <Footer/>
         </LayoutContext.Provider>
     )
