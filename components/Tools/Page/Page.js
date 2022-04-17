@@ -17,7 +17,8 @@ export default function Page({title, meta, bootstrap, email = false}) {
                         "Search metaverse...": "Busca tu metaverso...",
                         "Filters": "Filtros",
                         "Promote metaverse": "Promocionar metaverso",
-                        "Suggestions": "Sugerencias"
+                        "Suggestions": "Sugerencias",
+                        "Most Populars": "Populares"
                     }
                 }
             },

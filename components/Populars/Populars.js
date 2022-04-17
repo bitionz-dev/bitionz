@@ -10,13 +10,15 @@ import {Skeleton} from "@mui/material";
 import NoResult from "../Shared/NoResult/NoResult";
 import Error from "../Shared/Error/Error";
 import {useRouter} from "next/router";
+import {useTranslation} from "react-i18next";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Populars() {
     const router = useRouter()
+    const {t} = useTranslation();
     const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
-    const {filteredTokens} = useContext(LayoutContext);
+    const {filteredTokens, lang} = useContext(LayoutContext);
     const [more, setMore] = useState(false);
     let sliced = []
     if (isDesktopOrLaptop) {
@@ -43,13 +45,13 @@ export default function Populars() {
     }
     const popularTokens = []
     sliced.forEach((token) => popularTokens.push(token.id))
-    const {data, error} = useSWR(`/api/detail?id=${popularTokens.toString()}`, fetcher)
+    const {data, error} = useSWR(`/api/detail?id=${popularTokens.toString()}&lang=${lang}`, fetcher)
     if (error) return <Error/>
     if (data?.length < 1) return <NoResult/>
     const detailData = data && Object.values(data)
     return (
         <div className={styles.populars}>
-            <h2 className={styles.title}>Populares</h2>
+            <h2 className={styles.title}>{t("Most populars")}</h2>
             <div className={styles.popularsContainer}>
                 {data ? detailData.map((token) => {
                     return (

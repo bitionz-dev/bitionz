@@ -20,11 +20,11 @@ export default function Suggestions() {
     const router = useRouter()
     const {t} = useTranslation();
     const isDesktopOrLaptop = useMediaQuery({minWidth: 768})
-    const {filteredTokens} = useContext(LayoutContext);
+    const {filteredTokens, lang} = useContext(LayoutContext);
     const suggestedTokens = filteredTokens.slice(0, 8)
     const requiredTokens = []
     suggestedTokens.forEach((token) => requiredTokens.push(token.id))
-    const {data, error} = useSWR(`/api/suggested`, fetcher)
+    const {data, error} = useSWR(`/api/suggested?lang=${lang}`, fetcher)
     if (error) return <></>
     if (!data) return <CircularProgress className={styles.circular}/>
     if (data.length === 0) return <></>

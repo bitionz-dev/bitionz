@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import Cors from 'cors';
 import {supabase} from "../../api";
+import translate from "node-google-translate-skidz";
 
 
 // Initializing the cors middleware
@@ -26,9 +27,28 @@ function runMiddleware(req, res, fn) {
 export default async (req, res) => {
     await runMiddleware(req, res, cors);
     try {
+        const lang = req?.query?.lang
         const {data} = await supabase.from('customTokens').select();
-        res.status(200).json(data)
+        let translatedData = []
+        if (lang !== "en") {
+            for (const token of data) {
+                const {translation} = await translateString(token.description)
+                token.description = translation
+                translatedData.push(token)
+            }
+        } else {
+            translatedData = data
+        }
+        res.status(200).json(translatedData)
     } catch (err) {
         return err
     }
+}
+
+const translateString = async (string) => {
+    return await translate({
+        text: string, source: 'en', target: 'es'
+    }, function (result) {
+        return result.translation.translation
+    })
 }

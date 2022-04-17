@@ -24,7 +24,6 @@ function runMiddleware(req, res, fn) {
 
 export default async (req, res) => {
     await runMiddleware(req, res, cors);
-    console.log(req.query.id)
     try {
         const myHeaders = new Headers();
         myHeaders.append("X-CMC_PRO_API_KEY", process.env.SK);
@@ -32,14 +31,18 @@ export default async (req, res) => {
         const requestOptions = {
             method: 'GET', headers: myHeaders, redirect: 'follow'
         };
-
+        const lang = req?.query?.lang
         const {data} = await fetch(`${process.env.SU}/v2/cryptocurrency/info?id=${req.query.id}`, requestOptions).then(response => response.json())
         const detailData = Object.values(data)
         let translatedData = []
-        for (const token of detailData) {
-            const {translation} = await translateString(token.description)
-            token.description = translation
-            translatedData.push(token)
+        if (lang !== "en") {
+            for (const token of detailData) {
+                const {translation} = await translateString(token.description)
+                token.description = translation
+                translatedData.push(token)
+            }
+        } else {
+            translatedData = detailData
         }
         return res.status(200).json(translatedData)
     } catch (err) {
