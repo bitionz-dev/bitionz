@@ -6,10 +6,11 @@ import Select from '@mui/material/Select';
 import {useContext} from "react";
 import {LayoutContext} from "../../../../Tools/Context/Context";
 import styles from "./LangSelector.module.css";
+import {useMediaQuery} from "react-responsive";
 
 export default function LangSelector() {
     const {setLang} = useContext(LayoutContext);
-
+    const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
     const handleChange = (event) => {
         setLang(event.target.value);
     };
@@ -24,8 +25,8 @@ export default function LangSelector() {
                     onChange={handleChange}
                     className={styles.input}
                 >
-                    <MenuItem value={"es"}>ES</MenuItem>
-                    <MenuItem value={"en"}>EN</MenuItem>
+                    <MenuItem value={"es"}>{isDesktopOrLaptop ? "ES" : "Español"}</MenuItem>
+                    <MenuItem value={"en"}>{isDesktopOrLaptop ? "EN" : "English"}</MenuItem>
                 </Select>
             </FormControl>
         </Box>

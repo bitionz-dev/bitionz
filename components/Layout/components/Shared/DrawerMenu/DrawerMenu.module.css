@@ -20,4 +20,10 @@
     display: flex;
     margin-top: 18px;
     flex-flow: column;
+    align-items: flex-start;
+}
+
+.selector {
+    margin-left: 22px;
+    margin-top: 10px;
 }

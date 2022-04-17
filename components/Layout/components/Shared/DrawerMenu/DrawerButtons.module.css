@@ -1,11 +1,7 @@
-.promoteButton {
-    color: var(--color-light-grey) !important;
-    text-transform: capitalize !important;
-    border-color: white !important;
-}
 
-.loginButton {
-    color: var(--color-light-grey)  !important;
+
+.promoteButton {
+    color: #E4E4E4  !important;
     text-transform: capitalize !important;
     width: 191px;
     justify-content: left;

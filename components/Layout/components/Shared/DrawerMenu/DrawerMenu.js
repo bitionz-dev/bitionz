@@ -9,10 +9,13 @@ import {Divider, ListItemIcon} from "@mui/material";
 import {useContext} from "react";
 import {LayoutContext} from "../../../../Tools/Context/Context";
 import {useRouter} from "next/router";
+import LangSelector from "../LangSelector/LangSelector";
+import {useTranslation} from "react-i18next";
 
 
 export default function DrawerMenu() {
     const {setShowDrawerMenu} = useContext(LayoutContext);
+    const {t} = useTranslation();
     const router = useRouter()
     return (<>
             <Drawer open={true} className={styles.drawer} onClose={() => setShowDrawerMenu(false)}>
@@ -30,10 +33,11 @@ export default function DrawerMenu() {
                                     router.push('/promote')
                                     setShowDrawerMenu(false)
                                 }} variant="text"
-                                        className={buttonStyles.loginButton}>Promocionar</Button>
+                                        className={buttonStyles.promoteButton}>{t("Promote metaverse")}</Button>
                             </ListItem>
-
-                            <hr className={styles.separator}/>
+                            <div className={styles.selector}>
+                                <LangSelector/>
+                            </div>
                         </div>
                     </List>
                 </div>
