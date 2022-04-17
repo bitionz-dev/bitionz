@@ -9,7 +9,7 @@ import styles from "./LangSelector.module.css";
 import {useMediaQuery} from "react-responsive";
 
 export default function LangSelector() {
-    const {setLang} = useContext(LayoutContext);
+    const {setLang, lang} = useContext(LayoutContext);
     const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
     const handleChange = (event) => {
         setLang(event.target.value);
@@ -21,7 +21,7 @@ export default function LangSelector() {
                 <Select
                     labelId="langSelector"
                     id="lang-selector"
-                    defaultValue={"en"}
+                    defaultValue={lang}
                     onChange={handleChange}
                     className={styles.input}
                 >

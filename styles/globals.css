@@ -33,7 +33,7 @@ a {
 }
 
 .MuiSvgIcon-root {
-    color: white;
+    color: white !important;
 }
 
 .card:hover .card-img-overlay {
