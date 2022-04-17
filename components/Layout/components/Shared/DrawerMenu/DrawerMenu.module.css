@@ -21,9 +21,13 @@
     margin-top: 18px;
     flex-flow: column;
     align-items: flex-start;
+    padding: 1em;
 }
 
 .selector {
-    margin-left: 22px;
     margin-top: 10px;
+}
+
+.buttons :global(.MuiListItem-padding) {
+    padding: 0 !important;
 }
