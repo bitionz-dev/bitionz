@@ -11,6 +11,10 @@
     border-radius: 1em;
 }
 
+.suggestedContainer {
+    min-width: fit-content !important;
+}
+
 .image {
     border-radius: 1em;
     min-width: 400px;
