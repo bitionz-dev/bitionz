@@ -7,7 +7,7 @@
 }
 
 .container :global(.card) {
-    background-color: transparent !important;
+    background-color: transparent ;
 }
 
 .padding {
