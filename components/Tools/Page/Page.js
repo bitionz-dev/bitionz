@@ -18,7 +18,7 @@ export default function Page({title, meta, bootstrap, email = true}) {
                         "Filters": "Filtros",
                         "Promote metaverse": "Promocionar metaverso",
                         "Suggestions": "Sugerencias",
-                        "Most Populars": "Populares",
+                        "Most populars": "Populares",
                         "About us": "Nosotros",
                         "Technical document": "Documento técnico",
                         "Go to the website": "ir al sitio web",
@@ -42,7 +42,8 @@ export default function Page({title, meta, bootstrap, email = true}) {
                         "No results found": "No hay coincidencias con tú búsqueda",
                         "Try another term": "Prueba con otro término",
                         "Something went wrong": "Algo salió mal",
-                        "Try again later while we fix the issue": "Puedes volver a intentar mientras trabajamos para solucionarlo"
+                        "Try again later while we fix the issue": "Puedes volver a intentar mientras trabajamos para solucionarlo",
+                        "Apply": "Aplicar"
                     }
                 }
             },

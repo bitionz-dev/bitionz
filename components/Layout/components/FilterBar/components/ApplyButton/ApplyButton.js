@@ -2,9 +2,11 @@ import Button from '@mui/material/Button';
 import styles from "./ApplyButton.module.css"
 import {useContext} from "react";
 import {LayoutContext} from "../../../../../Tools/Context/Context";
+import {useTranslation} from "react-i18next";
 
 
 export default function ApplyButton() {
+    const {t} = useTranslation();
     const {filters, setFilteredTokens, tokens} = useContext(LayoutContext)
     let byBlockchains = []
     let byNFT = []
@@ -48,6 +50,6 @@ export default function ApplyButton() {
         setFilteredTokens(byType)
     }
     return (<Button variant="contained" className={styles.applyButton}
-                    onClick={() => applyFilters(JSON.parse(JSON.stringify(tokens)))}>Aplicar</Button>)
+                    onClick={() => applyFilters(JSON.parse(JSON.stringify(tokens)))}>{t("Apply")}</Button>)
 }
 

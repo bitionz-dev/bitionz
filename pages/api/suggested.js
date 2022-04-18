@@ -32,6 +32,9 @@ export default async (req, res) => {
         let translatedData = []
         if (lang !== "en") {
             for (const token of data) {
+                console.log(token)
+                let trans = await translateString(token.smallDesc)
+                token.smallDesc = trans.translation
                 const {translation} = await translateString(token.description)
                 token.description = translation
                 translatedData.push(token)
