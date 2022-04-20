@@ -58,7 +58,7 @@ export default function Page({title, meta, bootstrap, email = true}) {
         <>
             <Head>
                 <title>{title}</title>
-                <meta name={meta.name} content={meta.content}/>
+                <meta name="Bitionz" content="Bitionz is a metaverse tokens search engine"/>
                 {bootstrap && <link
                     rel="stylesheet"
                     href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"

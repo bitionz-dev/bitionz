@@ -11,14 +11,6 @@ import {useEffect} from "react";
 import Page from "../components/Tools/Page/Page";
 
 export default function Home({tokens, setTokens}) {
-    const page = {
-        name: "Bitionz",
-        meta: {
-            name: "bitionz",
-            description: "main page of bitionz"
-        },
-        bootstrap: true
-    }
     useEffect(() => {
         setTokens(tokens)
     }, [tokens])
