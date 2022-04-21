@@ -17,7 +17,6 @@
 
 .carousel :global(.text-white) {
     background-color: transparent !important;
-    box-shadow: #371C91 1px 1px 3px 1px;
 }
 
 .carousel :global(.card-img-overlay) {

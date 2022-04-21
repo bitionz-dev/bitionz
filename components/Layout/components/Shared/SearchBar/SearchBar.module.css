@@ -28,6 +28,10 @@
     color: var(--color-dark-grey) !important;;
 }
 
+.input :global(.MuiIconButton-root) {
+    transform: rotate(0deg) !important;
+}
+
 .icon {
     color: var(--color-dark-grey) !important;;
 }
