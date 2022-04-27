@@ -8,10 +8,8 @@
 
 }
 
-.container :global(a) {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+.hover :hover{
+    color: var(--color-icon-hovers);
 }
 
 .container :global(p) {
@@ -34,6 +32,10 @@
     display: flex;
     justify-content: space-evenly;
     gap: 10px;
+}
+
+.socialsIcons :hover {
+    color: var(--color-icon-hovers);
 }
 
 @media only screen and (max-device-width: 1024px) {

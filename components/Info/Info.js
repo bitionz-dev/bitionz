@@ -20,7 +20,7 @@ export default function Info({category, name, description, technicalDoc, webUrl,
         </div>}
 
         <Button variant="contained" className={`${styles.moreButton}`}
-                onClick={() => window.location.replace(webUrl)}>{t("Go to the website")}</Button>
+                onClick={() => window.open(webUrl, "_blank") || window.location.replace(webUrl)}>{t("Go to the website")}</Button>
         <div className={styles.iconsContainer}>
             {chat && <MessageIcon onClick={() => window.location.replace(chat)}/>}
             {twitter && <TwitterIcon onClick={() => window.location.replace(twitter)}/>}

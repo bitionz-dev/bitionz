@@ -17,8 +17,12 @@ body {
 }
 
 a {
-    color: inherit;
+    color: white;
     text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-icon-hovers) !important;
 }
 
 * {
@@ -75,4 +79,7 @@ label, p {
     --color-light-black: #16192C;
     --color-light-grey: #9F9F9F;
     --color-light-violet: #14172E;
+    --color-icon-hovers: #78a6e5;
+    --color-button-principal: #505EB2;
+    --color-button-principal-hovered: #39479d;
 }

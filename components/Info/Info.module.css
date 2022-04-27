@@ -2,13 +2,21 @@
     color: white !important;
     text-transform: capitalize !important;
     border-color: white !important;
-    background-color: #505EB2 !important;
+    background-color: var(--color-button-principal) !important;
     margin-right: auto !important;
+}
+
+.moreButton :hover {
+    background-color: var(--color-button-principal-hovered) !important;
 }
 
 .iconsContainer {
     display: flex;
     gap: 10px;
+}
+
+.iconsContainer :hover {
+    color: var(--color-icon-hovers);
 }
 
 .container {
@@ -21,6 +29,10 @@
 .tecDocContainer {
     display: flex;
     gap: 10px;
+}
+
+.tecDocContainer :hover {
+    color: var(--color-icon-hovers);
 }
 
 .chip {
