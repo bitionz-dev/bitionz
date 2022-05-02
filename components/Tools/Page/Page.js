@@ -72,7 +72,6 @@ export default function Page({title, meta, bootstrap, email = true}) {
                     crossOrigin="anonymous"
                 />}
                 <link rel="icon" href="/favicon.ico"/>
-                <!-- Global site tag (gtag.js) - Google Analytics -->
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXK9TGRKPG"></script>
                 <script>
                     window.dataLayer = window.dataLayer || [];
