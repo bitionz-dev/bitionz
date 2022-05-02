@@ -37,7 +37,6 @@ export default function Layout({children, tokens}) {
         bootstrap: true,
         email: true
     }
-    Bugsnag.notify(new Error('Test error'))
     useEffect(() => {
         setFilteredTokens(tokens)
     }, [tokens])
