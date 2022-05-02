@@ -1,4 +1,5 @@
 import NavBar from "./components/NavBar/NavBar";
+import React from 'react'
 import {LayoutContext} from "../Tools/Context/Context"
 import {useEffect, useState} from "react";
 import {useMediaQuery} from "react-responsive";
