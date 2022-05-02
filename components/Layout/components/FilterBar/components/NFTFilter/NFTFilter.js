@@ -9,6 +9,7 @@ import Checkbox from '@mui/material/Checkbox';
 import styles from "./NFTilter.module.css"
 import {useContext} from "react";
 import {LayoutContext} from "../../../../../Tools/Context/Context";
+import {useTranslation} from "react-i18next";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -22,19 +23,20 @@ const MenuProps = {
 };
 
 const names = [
-    'Si',
+    'Yes',
     'No',
 ];
 
 export default function NFTFilter() {
     const [NFT, setNFT] = React.useState([]);
     const {filters: {setNft}} = useContext(LayoutContext)
+    const {t} = useTranslation();
     const handleChange = (event) => {
         const {
             target: {value},
         } = event;
         setNFT(typeof value === 'string' ? value.split(',') : value,);
-        setNft(value === "Si")
+        setNft(value === "Yes")
     };
 
     return (
@@ -52,9 +54,9 @@ export default function NFTFilter() {
                     className={styles.filterContainer}
                 >
                     {names.map((name) => (
-                        <MenuItem key={name} value={name}>
+                        <MenuItem key={t(name)} value={name}>
                             <Checkbox checked={NFT.indexOf(name) > -1}/>
-                            <ListItemText primary={name}/>
+                            <ListItemText primary={t(name)}/>
                         </MenuItem>
                     ))}
                 </Select>

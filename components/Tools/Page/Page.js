@@ -43,7 +43,13 @@ export default function Page({title, meta, bootstrap, email = true}) {
                         "Try another term": "Prueba con otro término",
                         "Something went wrong": "Algo salió mal",
                         "Try again later while we fix the issue": "Puedes volver a intentar mientras trabajamos para solucionarlo",
-                        "Apply": "Aplicar"
+                        "Apply": "Aplicar",
+                        "Metaverse types": "Tipos de meta",
+                        "Augmented reality": "Realidad aumentada",
+                        "Enterprise": "Empresarial",
+                        "Entertainment": "Entretenimiento",
+                        "Payments": "Pagos",
+                        "Yes": "Si"
                     }
                 }
             },
@@ -66,6 +72,15 @@ export default function Page({title, meta, bootstrap, email = true}) {
                     crossOrigin="anonymous"
                 />}
                 <link rel="icon" href="/favicon.ico"/>
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXK9TGRKPG"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments)}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-TXK9TGRKPG');
+                </script>
             </Head>
             {bootstrap && <Script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin></Script>}
 

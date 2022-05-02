@@ -9,6 +9,7 @@ import Checkbox from '@mui/material/Checkbox';
 import styles from "./MetaTypeFilter.module.css"
 import {useContext} from "react";
 import {LayoutContext} from "../../../../../Tools/Context/Context";
+import {useTranslation} from "react-i18next";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -31,11 +32,11 @@ const supportedTypes = [
         value: "play-to-earn",
     },
     {
-        name: "Realidad aumentada",
+        name: "Augmented reality",
         value: "vr-ar",
     },
     {
-        name: "Empresarial",
+        name: "Enterprise",
         value: "enterprise-solutions",
     },
     {
@@ -43,7 +44,7 @@ const supportedTypes = [
         value: "media",
     },
     {
-        name: "Entretenimiento",
+        name: "Entertainment",
         value: "entertainment",
     },
     {
@@ -51,7 +52,7 @@ const supportedTypes = [
         value: "dao",
     },
     {
-        name: "Pagos",
+        name: "Payments",
         value: "payments",
     },
     {
@@ -63,6 +64,7 @@ const supportedTypes = [
 
 export default function MetaTypeFilter() {
     const {filters: {setTypes, types}} = useContext(LayoutContext)
+    const {t} = useTranslation();
 
     const handleChange = (event) => {
         const {
@@ -76,22 +78,22 @@ export default function MetaTypeFilter() {
     return (
         <div>
             <FormControl sx={{m: 1, width: 250}} size={"small"}>
-                <InputLabel id="demo-multiple-checkbox-label">Tipos de meta</InputLabel>
+                <InputLabel id="demo-multiple-checkbox-label">{t("Metaverse types")}</InputLabel>
                 <Select
                     labelId="demo-multiple-checkbox-label"
                     id="demo-multiple-checkbox"
                     multiple
                     value={types}
                     onChange={handleChange}
-                    input={<OutlinedInput label="Tipos de meta"/>}
+                    input={<OutlinedInput label={t("Metaverse types")}/>}
                     renderValue={(selected) => selected.join(', ')}
                     MenuProps={MenuProps}
                     className={styles.filterContainer}
                 >
                     {supportedTypes.map((type) => (
-                        <MenuItem key={type.name} value={type.value}>
+                        <MenuItem key={t(type.name)} value={type.value}>
                             <Checkbox checked={types.indexOf(type.value) > -1}/>
-                            <ListItemText primary={type.name}/>
+                            <ListItemText primary={t(type.name)}/>
                         </MenuItem>
                     ))}
                 </Select>
