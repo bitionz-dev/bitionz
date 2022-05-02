@@ -72,14 +72,6 @@ export default function Page({title, meta, bootstrap, email = true}) {
                     crossOrigin="anonymous"
                 />}
                 <link rel="icon" href="/favicon.ico"/>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXK9TGRKPG"></script>
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments)}
-                    gtag('js', new Date());
-
-                    gtag('config', 'G-TXK9TGRKPG');
-                </script>
             </Head>
             {bootstrap && <Script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin></Script>}
 
@@ -89,6 +81,14 @@ export default function Page({title, meta, bootstrap, email = true}) {
             {bootstrap &&
                 <Script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossOrigin></Script>}
             {email && <Script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>}
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TXK9TGRKPG"></Script>
+            <Script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments)}
+                gtag('js', new Date());
+
+                gtag('config', 'G-TXK9TGRKPG');
+            </Script>
         </>
     )
 
