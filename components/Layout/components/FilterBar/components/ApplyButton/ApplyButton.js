@@ -12,7 +12,6 @@ export default function ApplyButton() {
     let byNFT = []
     let byType = []
     const applyFilters = (tokens) => {
-        console.log(`BEFORE FILTERS ${tokens.length}`)
         if (filters.blockchains.length > 0) {
             tokens.map(token => {
                 if (token.platform) {

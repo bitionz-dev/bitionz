@@ -24,7 +24,6 @@ export default function SearchBar({className, width}) {
         popupIcon={<SearchIcon className={styles.icon}/>}
         getOptionLabel={(option) => option.name ? option.name : option}
         onChange={(e, value, reason, detail) => {
-            console.log(value)
             if (reason === "selectOption") {
                 router.push(`/detail/${value.id}`)
             } else if (reason === "createOption") {

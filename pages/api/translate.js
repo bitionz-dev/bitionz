@@ -25,14 +25,12 @@ function runMiddleware(req, res, fn) {
 
 export default async (req, res) => {
     await runMiddleware(req, res, cors);
-    console.log(req.query.id)
     try {
         translate({
             text: req.query.id,
             source: 'es',
             target: 'en'
         }, function (result) {
-            console.log(result.translation)
             res.status(200).json(result.translation)
         });
     } catch (err) {
