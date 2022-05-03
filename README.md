@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Bitionz <img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/public/logo" width="25" height="25" border="10" />
+======
 
-## Getting Started
+Bitionz is a web to search metaverse related tokens, powered by
+the  [CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)
 
-First, run the development server:
+Tech Stack
+------
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [React](https://es.reactjs.org/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Next JS](https://nextjs.org/) (React framework with a set of tools)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [Supabase](https://supabase.com/docs) (BaaS)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/detail.js`.
+- [Yarn](https://yarnpkg.com/) (package manager)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Cloud Platform
+------
 
-## Learn More
+- [Vercel](https://vercel.com/)
 
-To learn more about Next.js, take a look at the following resources:
+Environments
+------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Develop**:  https://bitionz-bitionz-dev.vercel.app/
+- **Production**: https://www.bitionz.net/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
