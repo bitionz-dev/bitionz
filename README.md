@@ -8,10 +8,14 @@ the  **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
 
 ### Table of Contents
 
-- **[Tech Stack](#tech-stack)**<br>
-- **[Cloud Platform](#cloud-platform)**<br>
+- **[Tech stack](#tech-stack)**<br>
+- **[Cloud platform](#cloud-platform)**<br>
 - **[Environments](#environments)**<br>
 - **[Integrations](#integrations)**<br>
+- **[Data sources](#data-sources)**<br>
+    - **[Overall context](#overall-context)**<br>
+    - **[Summary](#summary)**<br>
+    - **[Considerations](#considerations)**<br>
 
 ---
 
@@ -44,12 +48,18 @@ the  **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
 
 ## Data Sources
 
-The data that powers the site comes mainly from the **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
-except the suggested tokens those comes from the **[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)** both of the sources are exposed through REST API scheme
+### Overall Context
+
+The data that powers the site comes mainly from
+the **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
+except the suggested tokens those comes from
+the **[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)** both of the sources are
+exposed through REST API scheme
 
 eg:
 
-The "most populars" list  and "search results" is data obtained from the **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**, more specifically from the
+The "most populars" list and "search results" is data obtained from
+the **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**, more specifically from the
 `/v1/cryptocurrency/category?id=metaverseTokensID` endpoint provided by the API
 
 <img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/documentation/CMKTCP example.png" />
@@ -57,11 +67,30 @@ The "most populars" list  and "search results" is data obtained from the **[Coin
 
 <img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/documentation/CMCexpamle2.png" />
 
-meanwhile the "suggesteds" tokens are obtained from the **[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)** created for Bitionz
+meanwhile the "suggesteds" tokens adn ther details are obtained from
+the **[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)** created for Bitionz
 
 <img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/documentation/suggesteds1.png" />
 
 <img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/documentation/suggesteds2.png" />
+
+### Summary
+
+- Suggested Tokens (list and details) obtained
+  from  **[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)** created for Bitionz
+- Populars Tokens and search result Tokens (list and details) obtained
+  from **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
+
+### Considerations
+
+**[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)** credits and license limitations on using a free
+api-key should be avoided
+**[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)** free account should be upgraded
+
+
+
+
+
 
 
 
