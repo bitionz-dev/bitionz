@@ -14,11 +14,6 @@ export default function Home({tokens, setTokens}) {
     useEffect(() => {
         setTokens(tokens)
     }, [tokens])
-    const isDesktopOrLaptop = useMediaQuery({minWidth: 1224})
-    const isBigScreen = useMediaQuery({minWidth: 1824})
-    const isTabletOrMobile = useMediaQuery({maxWidth: 1224})
-    const isPortrait = useMediaQuery({orientation: 'portrait'})
-    const isRetina = useMediaQuery({minResolution: '2dppx'})
     return (<div className={styles.container}>
         <main className={styles.main}>
             <Banner/>
