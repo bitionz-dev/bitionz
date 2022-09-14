@@ -6,7 +6,7 @@ the  **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
 
 ----
 
-### Table of Contents
+### Table of Contentss
 
 - **[Tech stack](#tech-stack)**<br>
 - **[Cloud platform](#cloud-platform)**<br>
