@@ -85,7 +85,7 @@ the **[Supabase DB and Storage instance](https://coinmarketcap.com/api/documenta
 
 **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)** credits and license limitations on using a free
 api-key should be avoided
-**[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)** free account should be upgraded
+**[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)**  free account should be upgraded
 
 
 
