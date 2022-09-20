@@ -1,7 +1,7 @@
-<img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/public/logo" width="25" height="25" border="10" /> Bitionz
+<img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/public/logo" width="25" height="25" border="10" /> 
 ======
 
-Bitionz is a web to search metaverse related tokens, powered by
+Bitionz is a  web to search metaverse related tokens, powered by
 the  **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
 
 ----
@@ -85,7 +85,7 @@ the **[Supabase DB and Storage instance](https://coinmarketcap.com/api/documenta
 
 **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)** credits and license limitations on using a free
 api-key should be avoided
-**[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)**  free account should be upgraded
+**[Supabase DB and Storage instance](https://coinmarketcap.com/api/documentation/v1/)** free account should be upgraded
 
 
 

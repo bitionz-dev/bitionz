@@ -7,10 +7,10 @@ import NoResult from "../../components/Shared/NoResult/NoResult";
 
 export default function Search() {
     const page = {
-        name: "Bitionz | Search",
+        name: "Findverse | Search",
         meta: {
-            name: "bitionz search",
-            description: "search section of bitionz"
+            name: "findverse search",
+            description: "search section of findverse"
         },
         bootstrap: true
     }

@@ -1,6 +1,5 @@
 import * as React from "react";
 import Promote from "./components/Promote";
-import Login from './components/Login'
 import Social from './components/Social'
 import styles from "./Footer.module.css";
 import {useRouter} from "next/router";

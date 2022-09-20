@@ -19,16 +19,16 @@ function LaptopSvg(props) {
 </g>
 <defs>
 <linearGradient id="paint0_linear_4419_1451" x1="22.3731" y1="29.869" x2="-6.64022" y2="26.807" gradientUnits="userSpaceOnUse">
-<stop offset="0.2278" stopColor="#0087CA"/>
-<stop offset="0.8248" stopColor="#1EE1FF"/>
+<stop offset="0.2278" stop-color="#0087CA"/>
+<stop offset="0.8248" stop-color="#1EE1FF"/>
 </linearGradient>
 <linearGradient id="paint1_linear_4419_1451" x1="14.5721" y1="29.9183" x2="43.5854" y2="26.8563" gradientUnits="userSpaceOnUse">
-<stop offset="0.2278" stopColor="#0087CA"/>
-<stop offset="0.8248" stopColor="#1EE1FF"/>
+<stop offset="0.2278" stop-color="#0087CA"/>
+<stop offset="0.8248" stop-color="#1EE1FF"/>
 </linearGradient>
 <linearGradient id="paint2_linear_4419_1451" x1="17.5995" y1="30.5252" x2="19.4651" y2="-13.5766" gradientUnits="userSpaceOnUse">
-<stop offset="0.243" stopColor="#A135F4"/>
-<stop offset="0.635" stopColor="#E629FE"/>
+<stop offset="0.243" stop-color="#A135F4"/>
+<stop offset="0.635" stop-color="#E629FE"/>
 </linearGradient>
 <clipPath id="clip0_4419_1451">
 <rect width="215" height="42" fill="white"/>

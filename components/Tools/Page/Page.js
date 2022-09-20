@@ -63,8 +63,8 @@ export default function Page({title, meta, bootstrap, email = true}) {
     return (
         <>
             <Head>
-                <title>Bitionz</title>
-                <meta name="Bitionz" content="Bitionz is a metaverse tokens search engine"/>
+                <title>Findverse</title>
+                <meta name="Findverse" content="Findverse is a metaverse tokens search engine"/>
                 {bootstrap && <link
                     rel="stylesheet"
                     href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
