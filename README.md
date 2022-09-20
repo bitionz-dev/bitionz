@@ -1,7 +1,7 @@
-<img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/public/logo" width="25" height="25" border="10" /> 
+<img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/public/logo" width="25" height="25" border="10" /> Bitionz
 ======
 
-Bitionz is a  web to search metaverse related tokens, powered by
+Bitionz is a web to search metaverse related tokens, powered by
 the  **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
 
 ----

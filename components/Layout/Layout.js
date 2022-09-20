@@ -29,10 +29,10 @@ export default function Layout({children, tokens}) {
     const [showDrawerMenu, setShowDrawerMenu] = useState(false);
     const [lang, setLang] = useState("en");
     const page = {
-        name: |"Findverse | Promote",
+        name: "Bitionz | Promote",
         meta: {
-            name: "findverse promote",
-            description: "promote section of findverse"
+            name: "bitionz promote",
+            description: "promote section of bitionz"
         },
         bootstrap: true,
         email: true
