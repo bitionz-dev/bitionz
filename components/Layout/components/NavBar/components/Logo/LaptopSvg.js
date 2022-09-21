@@ -3,7 +3,7 @@ import React from "react";
 function LaptopSvg(props) {
     return (
 <svg width="215" height="42" viewBox="0 0 215 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_4419_1451)">
+<g clipPath="url(#clip0_4419_1451)">
 <path d="M52.5177 20.2612H63.8209V25.2345H52.5177V33.5207H46.5793V10.3867H65.2266V15.3935H52.5203V20.2612H52.5177Z" fill="white"/>
 <path d="M74.6181 11.0766C74.6181 12.8373 73.215 14.1502 71.2694 14.1502C69.3264 14.1502 67.9572 12.8373 67.9572 11.0766C67.9572 9.38539 69.3264 7.93356 71.2694 7.93356C73.215 7.93614 74.6181 9.38539 74.6181 11.0766ZM68.3901 33.5207V16.1889H74.1512V33.5207H68.3901Z" fill="white"/>
 <path d="M96.9375 22.8869V33.5207H91.2129V24.0607C91.2129 22.0245 89.9532 20.6422 88.1172 20.6422C85.8482 20.6422 84.3747 22.1275 84.3747 25.4765V33.5207H78.6162V16.1889H84.3747V17.8466C85.7439 16.4643 87.6504 15.6715 89.9193 15.6715C94.1287 15.6689 96.9375 18.5365 96.9375 22.8869Z" fill="white"/>
@@ -19,16 +19,16 @@ function LaptopSvg(props) {
 </g>
 <defs>
 <linearGradient id="paint0_linear_4419_1451" x1="22.3731" y1="29.869" x2="-6.64022" y2="26.807" gradientUnits="userSpaceOnUse">
-<stop offset="0.2278" stop-color="#0087CA"/>
-<stop offset="0.8248" stop-color="#1EE1FF"/>
+<stop offset="0.2278" stopColor="#0087CA"/>
+<stop offset="0.8248" stopColor="#1EE1FF"/>
 </linearGradient>
 <linearGradient id="paint1_linear_4419_1451" x1="14.5721" y1="29.9183" x2="43.5854" y2="26.8563" gradientUnits="userSpaceOnUse">
-<stop offset="0.2278" stop-color="#0087CA"/>
-<stop offset="0.8248" stop-color="#1EE1FF"/>
+<stop offset="0.2278" stopColor="#0087CA"/>
+<stop offset="0.8248" stopColor="#1EE1FF"/>
 </linearGradient>
 <linearGradient id="paint2_linear_4419_1451" x1="17.5995" y1="30.5252" x2="19.4651" y2="-13.5766" gradientUnits="userSpaceOnUse">
-<stop offset="0.243" stop-color="#A135F4"/>
-<stop offset="0.635" stop-color="#E629FE"/>
+<stop offset="0.243" stopColor="#A135F4"/>
+<stop offset="0.635" stopColor="#E629FE"/>
 </linearGradient>
 <clipPath id="clip0_4419_1451">
 <rect width="215" height="42" fill="white"/>

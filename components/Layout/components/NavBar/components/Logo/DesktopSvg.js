@@ -10,7 +10,7 @@ const DesktopSvg = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_4419_1451)">
+      <g clipPath="url(#clip0_4419_1451)">
         <path
           d="M52.5177 20.2612H63.8209V25.2345H52.5177V33.5207H46.5793V10.3867H65.2266V15.3935H52.5203V20.2612H52.5177Z"
           fill="white"
@@ -69,8 +69,8 @@ const DesktopSvg = (props) => {
           y2="26.807"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2278" stop-color="#0087CA" />
-          <stop offset="0.8248" stop-color="#1EE1FF" />
+          <stop offset="0.2278" stopColor="#0087CA" />
+          <stop offset="0.8248" stopColor="#1EE1FF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_4419_1451"
@@ -80,8 +80,8 @@ const DesktopSvg = (props) => {
           y2="26.8563"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.2278" stop-color="#0087CA" />
-          <stop offset="0.8248" stop-color="#1EE1FF" />
+          <stop offset="0.2278" stopColor="#0087CA" />
+          <stop offset="0.8248" stopColor="#1EE1FF" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_4419_1451"
@@ -91,8 +91,8 @@ const DesktopSvg = (props) => {
           y2="-13.5766"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.243" stop-color="#A135F4" />
-          <stop offset="0.635" stop-color="#E629FE" />
+          <stop offset="0.243" stopColor="#A135F4" />
+          <stop offset="0.635" stopColor="#E629FE" />
         </linearGradient>
         <clipPath id="clip0_4419_1451">
           <rect width="215" height="42" fill="white" />
