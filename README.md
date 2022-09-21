@@ -1,7 +1,7 @@
 <img src="https://cjpoeqgxfkzoleidhjwu.supabase.co/storage/v1/object/public/bitionz/public/logo" width="25" height="25" border="10" /> Bitionz
 ======
 
-Findverse is a web to search metaverse related tokens, powered by
+Bitionz is a web to search metaverse related tokens, powered by
 the  **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
 
 ----
@@ -33,7 +33,7 @@ the  **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
 
 - [Vercel](https://vercel.com/)
 
-- [Bitionz on Vercel ](https://vercel.com/bitionz-dev/findverse)
+- [Bitionz on Vercel ](https://vercel.com/bitionz-dev/bitionz)
 
 ## Environments
 
