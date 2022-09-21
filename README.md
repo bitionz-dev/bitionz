@@ -33,7 +33,7 @@ the  **[CoinmarketCap API](https://coinmarketcap.com/api/documentation/v1/)**
 
 - [Vercel](https://vercel.com/)
 
-- [Bitionz on Vercel ](https://vercel.com/bitionz-dev/bitionz)
+- [Bitionz on Vercel ](https://vercel.com/bitionz-dev/findverse)
 
 ## Environments
 
